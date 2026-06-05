@@ -79,6 +79,8 @@ export function AddStudentModal({ open, onClose, student = null }) {
   const [dob, setDob] = useState('')
   const [grade, setGrade] = useState('')
   const [section, setSection] = useState('')
+  const [guardianName, setGuardianName] = useState('')
+  const [relation, setRelation] = useState('')
   const [errors, setErrors] = useState({})
   const [formMessage, setFormMessage] = useState('')
 
@@ -90,6 +92,8 @@ export function AddStudentModal({ open, onClose, student = null }) {
     setDob('')
     setGrade('')
     setSection('')
+    setGuardianName('')
+    setRelation('')
     setErrors({})
     setFormMessage('')
   }
@@ -106,6 +110,12 @@ export function AddStudentModal({ open, onClose, student = null }) {
       setDob(student.dob || '')
       setGrade(g)
       setSection(s)
+      setGuardianName(student.guardian && student.guardian !== '—' ? student.guardian : '')
+      setRelation(
+        student.relation && student.relation !== '—'
+          ? student.relation.charAt(0).toUpperCase() + student.relation.slice(1).toLowerCase()
+          : '',
+      )
       setErrors({})
       setFormMessage('')
     } else {
@@ -131,6 +141,8 @@ export function AddStudentModal({ open, onClose, student = null }) {
         : [() => validateDate(dob, 'Date of birth')],
       grade: [() => validateRequired(grade, 'Grade')],
       section: [() => validateRequired(section, 'Section')],
+      guardianName: [() => validateRequired(guardianName, 'Parent name')],
+      relation: [() => validateRequired(relation, 'Relationship')],
     })
     setErrors(fieldErrors)
     if (!valid) {
@@ -140,12 +152,18 @@ export function AddStudentModal({ open, onClose, student = null }) {
 
     const name = `${firstName.trim()} ${lastName.trim()}`
     const gradeClass = `${grade} - ${section.toUpperCase()}`
+    const relationLabel = relation.trim().charAt(0).toUpperCase() + relation.trim().slice(1).toLowerCase()
+    const parentPayload = {
+      guardian: guardianName.trim(),
+      relation: relationLabel,
+    }
 
     if (isEdit) {
       students.update(student.id, {
         name,
         email: email.trim(),
         grade: gradeClass,
+        ...parentPayload,
       })
       showToast(`${name} updated successfully`, 'success')
     } else {
@@ -154,8 +172,7 @@ export function AddStudentModal({ open, onClose, student = null }) {
         email: email.trim(),
         studentId: `STU-${Date.now().toString().slice(-5)}`,
         grade: gradeClass,
-        guardian: '—',
-        relation: '—',
+        ...parentPayload,
         status: 'Active',
         joined: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         avatar: Math.floor(Math.random() * 70) + 1,
@@ -210,6 +227,28 @@ export function AddStudentModal({ open, onClose, student = null }) {
           </FormField>
         </div>
         <h3 className="modal-section">Parent Information</h3>
+        <div className="modal-row modal-row--2">
+          <FormField label="Parent Name" error={errors.guardianName}>
+            <input
+              type="text"
+              className="modal-input"
+              placeholder="Parent full name"
+              value={guardianName}
+              onChange={(e) => setGuardianName(e.target.value)}
+            />
+          </FormField>
+          <FormField label="Relationship" error={errors.relation}>
+            <select
+              className="modal-input"
+              value={relation}
+              onChange={(e) => setRelation(e.target.value)}
+            >
+              <option value="">Select relationship</option>
+              <option value="Mother">Mother</option>
+              <option value="Father">Father</option>
+            </select>
+          </FormField>
+        </div>
       </form>
     </ModalShell>
   )
