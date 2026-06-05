@@ -1,0 +1,13 @@
+{
+  "classOptions": ["All Classes", "10-A", "10-B", "10-C"],
+  "students": [
+    { "id": 1, "name": "Emma Watson", "studentId": "STU-2023-001", "avatar": 5, "classTag": "10-A", "attendance": 98, "attLabel": "Excellent", "attTone": "green", "grade": "A+", "score": 92, "total": 100, "barTone": "green" },
+    { "id": 2, "name": "James Wilson", "studentId": "STU-2023-002", "avatar": 12, "classTag": "10-A", "attendance": 82, "attLabel": "Need Attention", "attTone": "orange", "grade": "B+", "score": 79, "total": 100, "barTone": "orange" },
+    { "id": 3, "name": "Olivia Brown", "studentId": "STU-2023-003", "avatar": 9, "classTag": "10-B", "attendance": 100, "attLabel": "Excellent", "attTone": "green", "grade": "A", "score": 88, "total": 100, "barTone": "blue" },
+    { "id": 4, "name": "Noah Johnson", "studentId": "STU-2023-004", "avatar": 15, "classTag": "10-B", "attendance": 68, "attLabel": "At Risk", "attTone": "red", "grade": "C+", "score": 65, "total": 100, "barTone": "red" },
+    { "id": 5, "name": "Sophia Lee", "studentId": "STU-2023-005", "avatar": 20, "classTag": "10-C", "attendance": 96, "attLabel": "Excellent", "attTone": "green", "grade": "A-", "score": 84, "total": 100, "barTone": "blue" },
+    { "id": 6, "name": "Liam Smith", "studentId": "STU-2023-006", "avatar": 33, "classTag": "10-C", "attendance": 88, "attLabel": "Need Attention", "attTone": "orange", "grade": "B", "score": 76, "total": 100, "barTone": "orange" },
+    { "id": 7, "name": "Ava Davis", "studentId": "STU-2023-007", "avatar": 44, "classTag": "10-A", "attendance": 94, "attLabel": "Good", "attTone": "green", "grade": "A", "score": 88, "total": 100, "barTone": "blue" },
+    { "id": 8, "name": "Ethan Miller", "studentId": "STU-2023-008", "avatar": 52, "classTag": "10-B", "attendance": 71, "attLabel": "At Risk", "attTone": "red", "grade": "C", "score": 58, "total": 100, "barTone": "red" }
+  ]
+}

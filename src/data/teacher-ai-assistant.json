@@ -1,0 +1,15 @@
+{
+  "insights": [
+    { "id": 1, "tone": "green", "icon": "Users", "text": "Class 10-A shows 12% improvement in algebra scores this month compared to last month" },
+    { "id": 2, "tone": "yellow", "icon": "Info", "text": "3 Students in class 10 C are scoring below 60%. Early intervention recommended" },
+    { "id": 3, "tone": "green", "icon": "Users", "text": "Assignment Submission rate increaed to 94% across all classes." }
+  ],
+  "suggestions": [
+    { "id": 1, "tone": "green", "icon": "Lightbulb", "text": "Schedule a revision session for Class 10-C before the upcoming unit test." },
+    { "id": 2, "tone": "yellow", "icon": "Lightbulb", "text": "Consider peer tutoring for students scoring below 60% in Statistics." }
+  ],
+  "alerts": [
+    { "id": 1, "tone": "yellow", "icon": "Shield", "text": "David Martinez has missed 3 consecutive classes this week." },
+    { "id": 2, "tone": "green", "icon": "Shield", "text": "Class 10-B attendance improved to 96% this month." }
+  ]
+}

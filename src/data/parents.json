@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Michael Johnson", "email": "michael.j@example.com", "contact": "+1 (555) 234-5678", "linkedStudents": ["Alex Johnson - Gr 9"], "status": "Active", "joined": "Oct 24, 2023", "avatar": 11 },
+  { "id": 2, "name": "Emma Williams", "email": "emma.w@example.com", "contact": "+1 (555) 987-6543", "linkedStudents": ["Sarah Williams - Gr 3"], "status": "Inactive", "joined": "Oct 22, 2023", "avatar": 25 },
+  { "id": 3, "name": "Robert Chen", "email": "robert.c@example.com", "contact": "+1 (555) 345-6789", "linkedStudents": ["David Chen - Gr 8"], "status": "Active", "joined": "Oct 18, 2023", "avatar": 53 },
+  { "id": 4, "name": "Sanjay Patel", "email": "sanjay.p@example.com", "contact": "+1 (555) 876-5432", "linkedStudents": ["Maya Patel - Gr 4"], "status": "Active", "joined": "Oct 15, 2023", "avatar": 61 },
+  { "id": 5, "name": "Daniel Cruz", "email": "daniel.c@example.com", "contact": "+1 (555) 789-0123", "linkedStudents": ["Isabella Cruz - Gr 7", "Mateo Cruz - Gr 5"], "status": "Active", "joined": "Sep 29, 2023", "avatar": 33 }
+]

@@ -1,0 +1,28 @@
+{
+  "statCards": [
+    { "id": 1, "value": 12, "label": "Total Documents" },
+    { "id": 2, "value": 3, "label": "Total Certificates" },
+    { "id": 3, "value": 9, "label": "Students Records" },
+    { "id": 4, "value": 4, "label": "Other files" }
+  ],
+  "documents": [
+    { "id": 1, "title": "Enrollment Certificate - Liam Smith", "meta": "Liam smith . 2026-03-01 . 245KB . By Admin Office", "tag": "Certificates", "tagTone": "green", "iconTone": "red" },
+    { "id": 2, "title": "Report Card - Term 2 - Emily Brown", "meta": "Emily Brown . 2026-03-05 . 180KB . By Sarah Johnson", "tag": "Report Card", "tagTone": "purple", "iconTone": "red" },
+    { "id": 3, "title": "Student ID Card - Noah Johnson", "meta": "Noah Johnson . 2026-02-28 . 95KB . By Admin Office", "tag": "ID Card", "tagTone": "orange", "iconTone": "blue" },
+    { "id": 4, "title": "Medical Record - Sophia Lee", "meta": "Sophia Lee . 2026-02-15 . 320KB . By Nurse Office", "tag": "Other", "tagTone": "gray", "iconTone": "red" },
+    { "id": 5, "title": "Transfer Certificate - Ethan Miller", "meta": "Ethan Miller . 2026-01-20 . 210KB . By Admin Office", "tag": "Certificates", "tagTone": "green", "iconTone": "red" },
+    { "id": 6, "title": "Report Card - Term 1 - Ava Wilson", "meta": "Ava Wilson . 2026-01-10 . 175KB . By James Porter", "tag": "Report Card", "tagTone": "purple", "iconTone": "red" }
+  ],
+  "studentRecords": [
+    { "id": 1, "title": "Admission Form - Alex Johnson", "meta": "Alex Johnson . 2023-10-24 . 156KB . By Admin Office", "tag": "Student records", "tagTone": "blue", "iconTone": "blue" },
+    { "id": 2, "title": "Health Record - Emily Brown", "meta": "Emily Brown . 2024-01-15 . 280KB . By Nurse Office", "tag": "Student records", "tagTone": "blue", "iconTone": "blue" },
+    { "id": 3, "title": "Behavior Report - Liam Smith", "meta": "Liam Smith . 2025-11-08 . 98KB . By Sarah Johnson", "tag": "Student records", "tagTone": "blue", "iconTone": "blue" },
+    { "id": 4, "title": "Transfer Application - Sophia Lee", "meta": "Sophia Lee . 2025-09-12 . 142KB . By Admin Office", "tag": "Student records", "tagTone": "blue", "iconTone": "blue" }
+  ],
+  "certificates": [
+    { "id": 1, "title": "Merit Certificate", "student": "Emily Brown", "issued": "2026-03-15", "badge": "Merit", "tone": "yellow", "icon": "Medal" },
+    { "id": 2, "title": "Completion Certificate", "student": "Liam Smith", "issued": "2026-03-15", "badge": "Completion", "tone": "purple", "icon": "GradCap" },
+    { "id": 3, "title": "Attendance Certificate", "student": "Naoh Johnson", "issued": "2026-03-15", "badge": "Attendance", "tone": "green", "icon": "Shield" }
+  ],
+  "typeOptions": ["All Types", "Certificates", "Report Card", "ID Card", "Other"]
+}

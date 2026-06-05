@@ -1,0 +1,9 @@
+[
+  { "id": 1, "title": "Grade 5 - Section A", "room": "Room 101", "students": 32, "gradeTag": "Grade 5", "teacher": "Sarah Connor", "schedule": "Mon - Fri 8:00-15:00" },
+  { "id": 2, "title": "Grade 6 - Section B", "room": "Room 205", "students": 28, "gradeTag": "Grade 6", "teacher": "Robert Chen", "schedule": "Mon - Fri 8:00-15:30" },
+  { "id": 3, "title": "Grade 4 - Section A", "room": "Room 103", "students": 30, "gradeTag": "Grade 4", "teacher": "Maria Santos", "schedule": "Mon - Fri 8:00-14:30" },
+  { "id": 4, "title": "Grade 7 - Section C", "room": "Room 101", "students": 32, "gradeTag": "Grade 7", "teacher": "James Porter", "schedule": "Mon - Fri 8:00-15:00" },
+  { "id": 5, "title": "Grade 5 - Section B", "room": "Room 205", "students": 28, "gradeTag": "Grade 5", "teacher": "Lisa Park", "schedule": "Mon - Fri 8:00-15:30" },
+  { "id": 6, "title": "Grade 8 - Section A", "room": "Room 103", "students": 30, "gradeTag": "Grade 8", "teacher": "Alice Johnson", "schedule": "Mon - Fri 8:00-14:30" },
+  { "id": 7, "title": "Grade 3 - Section A", "room": "Room 101", "students": 32, "gradeTag": "Grade 3", "teacher": "David kim", "schedule": "Mon - Fri 8:00-15:00" }
+]

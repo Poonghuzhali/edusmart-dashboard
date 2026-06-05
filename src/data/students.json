@@ -1,0 +1,15 @@
+[
+  { "id": 1, "name": "Alex Johnson", "email": "alex.j@example.com", "studentId": "STU-24001", "grade": "Grade 5 - A", "guardian": "Michael Johnson", "relation": "Father", "status": "Active", "joined": "Oct 24, 2023", "avatar": 12 },
+  { "id": 2, "name": "Emily Brown", "email": "emily.b@example.com", "studentId": "STU-24002", "grade": "Grade 6 - B", "guardian": "Sarah Brown", "relation": "Mother", "status": "Active", "joined": "Oct 22, 2023", "avatar": 5 },
+  { "id": 3, "name": "Liam Smith", "email": "liam.s@example.com", "studentId": "STU-24003", "grade": "Grade 5 - A", "guardian": "David Smith", "relation": "Father", "status": "Active", "joined": "Oct 20, 2023", "avatar": 33 },
+  { "id": 4, "name": "Sophia Lee", "email": "sophia.l@example.com", "studentId": "STU-24004", "grade": "Grade 7 - A", "guardian": "Anna Lee", "relation": "Mother", "status": "Inactive", "joined": "Oct 18, 2023", "avatar": 9 },
+  { "id": 5, "name": "Noah Williams", "email": "noah.w@example.com", "studentId": "STU-24005", "grade": "Grade 4 - C", "guardian": "James Williams", "relation": "Father", "status": "Active", "joined": "Oct 15, 2023", "avatar": 15 },
+  { "id": 6, "name": "Olivia Davis", "email": "olivia.d@example.com", "studentId": "STU-24006", "grade": "Grade 8 - A", "guardian": "Maria Davis", "relation": "Mother", "status": "Active", "joined": "Oct 12, 2023", "avatar": 20 },
+  { "id": 7, "name": "Ethan Miller", "email": "ethan.m@example.com", "studentId": "STU-24007", "grade": "Grade 3 - B", "guardian": "Robert Miller", "relation": "Father", "status": "Active", "joined": "Oct 10, 2023", "avatar": 52 },
+  { "id": 8, "name": "Ava Wilson", "email": "ava.w@example.com", "studentId": "STU-24008", "grade": "Grade 6 - A", "guardian": "Lisa Wilson", "relation": "Mother", "status": "Inactive", "joined": "Oct 8, 2023", "avatar": 23 },
+  { "id": 9, "name": "Mason Taylor", "email": "mason.t@example.com", "studentId": "STU-24009", "grade": "Grade 5 - B", "guardian": "John Taylor", "relation": "Father", "status": "Active", "joined": "Oct 5, 2023", "avatar": 68 },
+  { "id": 10, "name": "Isabella Cruz", "email": "isabella.c@example.com", "studentId": "STU-24010", "grade": "Grade 8 - A", "guardian": "Daniel Cruz", "relation": "Father", "status": "Active", "joined": "Sep 29, 2023", "avatar": 44 },
+  { "id": 11, "name": "Arjun Mehta", "email": "arjun.m@example.com", "studentId": "STU-24011", "grade": "Grade 3 - A", "guardian": "Priya Mehta", "relation": "Mother", "status": "Active", "joined": "Sep 26, 2023", "avatar": 57 },
+  { "id": 12, "name": "Chloe Adams", "email": "chloe.a@example.com", "studentId": "STU-24012", "grade": "Grade 6 - C", "guardian": "Rachel Adams", "relation": "Mother", "status": "Inactive", "joined": "Sep 24, 2023", "avatar": 32 },
+  { "id": 13, "name": "Kwame Mensah", "email": "kwame.m@example.com", "studentId": "STU-24013", "grade": "Grade 5 - C", "guardian": "Abena Mensah", "relation": "Mother", "status": "Active", "joined": "Sep 22, 2023", "avatar": 59 }
+]

@@ -1,0 +1,44 @@
+{
+  "stats": [
+    { "id": 1, "icon": "GradCap", "accent": "violet", "change": "+3.5%", "value": "1,250", "title": "Total Students", "sub": "Enrolled this year" },
+    { "id": 2, "icon": "Users", "accent": "teal", "change": "+1.2%", "value": "85", "title": "Total Staff", "sub": "Active employees" },
+    { "id": 3, "icon": "Book", "accent": "indigo", "change": "+0.8%", "value": "48", "title": "Total Classes", "sub": "Across all grades" },
+    { "id": 4, "icon": "Rupee", "accent": "rose", "change": "+5.1%", "value": "152k", "title": "Total Revenue", "sub": "Collected this team" }
+  ],
+  "attendanceData": [
+    { "id": 1, "day": "Mon", "value": 52 },
+    { "id": 2, "day": "Tue", "value": 50 },
+    { "id": 3, "day": "Wed", "value": 62 },
+    { "id": 4, "day": "Thu", "value": 70 },
+    { "id": 5, "day": "Fri", "value": 64 },
+    { "id": 6, "day": "Sat", "value": 82 },
+    { "id": 7, "day": "Sun", "value": 90 }
+  ],
+  "feeData": [
+    { "id": 1, "month": "Jan", "value": 38 },
+    { "id": 2, "month": "Feb", "value": 66 },
+    { "id": 3, "month": "Mar", "value": 60 },
+    { "id": 4, "month": "Apr", "value": 42 },
+    { "id": 5, "month": "May", "value": 88 },
+    { "id": 6, "month": "Jun", "value": 48 }
+  ],
+  "activities": [
+    { "id": 1, "icon": "GradCap", "tone": "violet", "text": "Liam smith admitted to Grade 5", "badge": "AE", "who": "Admin Elena", "time": "3 minutes ago" },
+    { "id": 2, "icon": "Rupee", "tone": "green", "text": "Emily Brown paid fee for Term 1", "badge": "EB", "who": "Emily Brown", "time": "12 minutes ago" },
+    { "id": 3, "icon": "GradCap", "tone": "violet", "text": "Emily Brown admitted to Grade 6", "badge": "AE", "who": "Admin Elena", "time": "25 minutes ago" },
+    { "id": 4, "icon": "Rupee", "tone": "green", "text": "Emily Brown paid fee for Term 2", "badge": "EB", "who": "Emily Brown", "time": "1 hour ago" },
+    { "id": 5, "icon": "CheckCircle", "tone": "green", "text": "Attendance marked for grade 5A", "badge": "SC", "who": "Sarah Connor", "time": "2 hours ago" },
+    { "id": 6, "icon": "Bell", "tone": "violet", "text": "Annual sports day announcement Published", "badge": "PJ", "who": "Principal Johnson", "time": "3 hour ago" }
+  ],
+  "alerts": [
+    { "id": 1, "icon": "Bell", "tone": "blue", "title": "New Admission Request", "text": "A New admission request has been submitted for Grade 5" },
+    { "id": 2, "icon": "Bell", "tone": "blue", "title": "Approval Request", "text": "Sarah Connor approved a leave request." },
+    { "id": 3, "icon": "Warning", "tone": "amber", "title": "Fee payment overdue", "text": "12 Students have overdue fee payments." },
+    { "id": 4, "icon": "Warning", "tone": "amber", "title": "Attendance Alert", "text": "Attendance below 75% for 5 students this week." }
+  ],
+  "approvals": [
+    { "id": 1, "name": "Sarah Connor", "tag": "Leave", "tagTone": "amber", "desc": "Medical leave request for 3 days" },
+    { "id": 2, "name": "James Porter", "tag": "Attendance Edit", "tagTone": "amber", "desc": "Request to correct attendance" },
+    { "id": 3, "name": "Robert Chen", "tag": "Attendance Edit", "tagTone": "amber", "desc": "Attendance correction" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "units": [
+    { "id": 1, "label": "Unit 1 - Algebra basics Feb 2026" },
+    { "id": 2, "label": "Unit 2 - Linear Equations Mar 2026" },
+    { "id": 3, "label": "Unit 3 - Quadratic Equations Apr 2026" }
+  ],
+  "activeUnit": 3,
+  "marks": [
+    { "id": 1, "name": "Emma Watson", "studentId": "STU-2023-001", "avatar": 5, "math": 92, "algebra": 88, "stats": 95 },
+    { "id": 2, "name": "James Wilson", "studentId": "STU-2023-002", "avatar": 12, "math": 78, "algebra": 72, "stats": 80 },
+    { "id": 3, "name": "Olivia Brown", "studentId": "STU-2023-003", "avatar": 9, "math": 85, "algebra": 82, "stats": 88 },
+    { "id": 4, "name": "Noah Johnson", "studentId": "STU-2023-004", "avatar": 15, "math": 58, "algebra": 55, "stats": 60 }
+  ],
+  "subjects": ["Mathematics", "Adv Algebra", "Statitics"],
+  "classLabel": "class 10A"
+}

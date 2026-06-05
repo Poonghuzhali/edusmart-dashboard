@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Sarah Johnson", "email": "sarah.j@example.com", "employeeId": "EMP-1001", "department": "Senior Teacher", "subjectType": "teacher", "subjects": "Algebra, Geometry", "status": "Active", "joined": "Aug 15, 2018", "avatar": 47 },
+  { "id": 2, "name": "James Porter", "email": "james.p@example.com", "employeeId": "EMP-1002", "department": "Head of Department", "subjectType": "teacher", "subjects": "Physics, Chemistry", "status": "Active", "joined": "Sep 3, 2016", "avatar": 13 },
+  { "id": 3, "name": "Emily Carter", "email": "emily.c@example.com", "employeeId": "EMP-1003", "department": "Teacher", "subjectType": "teacher", "subjects": "English Literature", "status": "Active", "joined": "Jan 10, 2020", "avatar": 5 },
+  { "id": 4, "name": "Michael Brown", "email": "michael.b@example.com", "employeeId": "EMP-1004", "department": "Teacher", "subjectType": "teacher", "subjects": "History, Civics", "status": "On Leave", "joined": "Mar 22, 2019", "avatar": 12 },
+  { "id": 5, "name": "David Wilson", "email": "david.w@example.com", "employeeId": "EMP-1005", "department": "Coach", "subjectType": "teacher", "subjects": "Physical Education", "status": "Active", "joined": "Jul 8, 2017", "avatar": 15 },
+  { "id": 6, "name": "Lisa Anderson", "email": "lisa.a@example.com", "employeeId": "EMP-1006", "department": "School secretary", "subjectType": "staff", "subjects": "", "status": "Active", "joined": "Nov 14, 2021", "avatar": 9 },
+  { "id": 7, "name": "Robert Chen", "email": "robert.c@example.com", "employeeId": "EMP-1007", "department": "It Manager", "subjectType": "staff", "subjects": "", "status": "Active", "joined": "Feb 5, 2018", "avatar": 53 },
+  { "id": 8, "name": "Anna Martinez", "email": "anna.m@example.com", "employeeId": "EMP-1008", "department": "School counselor", "subjectType": "teacher", "subjects": "Counseling", "status": "Active", "joined": "Apr 18, 2019", "avatar": 20 },
+  { "id": 9, "name": "Thomas Lee", "email": "thomas.l@example.com", "employeeId": "EMP-1009", "department": "Teacher", "subjectType": "teacher", "subjects": "Biology, Science", "status": "On Leave", "joined": "Jun 30, 2020", "avatar": 52 },
+  { "id": 10, "name": "Jennifer Davis", "email": "jennifer.d@example.com", "employeeId": "EMP-1010", "department": "Teacher", "subjectType": "teacher", "subjects": "Art, Design", "status": "Active", "joined": "Aug 1, 2022", "avatar": 23 }
+]

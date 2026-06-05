@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "English Writing Assessment",
+    "status": "Completed",
+    "statusTone": "completed",
+    "date": "April 16 2026",
+    "grade": "Grade 6",
+    "subject": "English",
+    "passed": "4/6 Passed"
+  },
+  {
+    "id": 2,
+    "title": "Unit Test Mathematics",
+    "status": "Completed",
+    "statusTone": "completed",
+    "date": "April 18 2026",
+    "grade": "Grade 5",
+    "subject": "Mathematics",
+    "passed": "3/8 Passed"
+  },
+  {
+    "id": 3,
+    "title": "Mid Term Examination",
+    "status": "Scheduled",
+    "statusTone": "scheduled",
+    "date": "April 20-25 2026",
+    "grade": "Grade 5-8",
+    "subject": "All Subjects",
+    "passed": "8/8 Passed"
+  },
+  {
+    "id": 4,
+    "title": "Final Exam Term 1",
+    "status": "Planning",
+    "statusTone": "planning",
+    "date": "May 5-15 2026",
+    "grade": "Grade 3-8",
+    "subject": "All Subjects",
+    "passed": null
+  },
+  {
+    "id": 5,
+    "title": "Science Lab Practical",
+    "status": "Upcoming",
+    "statusTone": "upcoming",
+    "date": "Apr 22 2026",
+    "grade": "Grade 7-8",
+    "subject": "Science",
+    "passed": null
+  }
+]

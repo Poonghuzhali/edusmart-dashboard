@@ -1,0 +1,19 @@
+{
+  "navItems": [
+    { "id": 1, "key": "dashboard", "label": "Dashboard", "icon": "Grid" },
+    { "id": 2, "key": "my-classes", "label": "My Classes", "icon": "UsersGroup" },
+    { "id": 3, "key": "students", "label": "Students", "icon": "User" },
+    { "id": 4, "key": "attendance", "label": "Attendance", "icon": "CalendarCheck" },
+    { "id": 5, "key": "assignment", "label": "Assignment", "icon": "FileText" },
+    { "id": 6, "key": "exams", "label": "Exams & Marks", "icon": "ClipboardList" },
+    { "id": 7, "key": "messages", "label": "Messages", "icon": "Chat" }
+  ],
+  "profile": {
+    "name": "Sarah Johnson",
+    "role": "Teacher",
+    "avatar": 47
+  },
+  "brand": {
+    "name": "EduSmart"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+  "dayLabels": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  "rows": [
+    {
+      "id": 1,
+      "time": "08:00 AM - 09:00 AM",
+      "cells": {
+        "monday": { "subject": "Mathematics", "teacher": "Sarah Connor", "room": "Room 101", "color": "blue" },
+        "tuesday": { "subject": "English Lit.", "teacher": "Maria santos", "room": "Room 205", "color": "purple" },
+        "wednesday": { "subject": "Chemistry", "teacher": "Robert Chen", "room": "Lab 2", "color": "green" },
+        "thursday": { "subject": "World History", "teacher": "James porter", "room": "Room 103", "color": "orange" },
+        "friday": { "subject": "Mathematics", "teacher": "Sarah Connor", "room": "Room 101", "color": "blue" }
+      }
+    },
+    {
+      "id": 2,
+      "time": "09:00 AM - 10:00 AM",
+      "cells": {
+        "monday": { "subject": "Physics", "teacher": "Robert Chen", "room": "Lab 1", "color": "green" },
+        "tuesday": { "subject": "Physics", "teacher": "Robert Chen", "room": "Lab 1", "color": "green", "conflict": true },
+        "wednesday": { "subject": "Biology", "teacher": "Lisa park", "room": "Lab 3", "color": "green" },
+        "thursday": { "subject": "Geography", "teacher": "David kim", "room": "Room 108", "color": "orange" },
+        "friday": { "subject": "English Lit.", "teacher": "Maria santos", "room": "Room 205", "color": "purple" }
+      }
+    },
+    {
+      "id": 3,
+      "type": "lunch",
+      "time": "10:00 AM - 10:30 AM",
+      "label": "LUNCH BREAK"
+    },
+    {
+      "id": 4,
+      "time": "10:30 AM - 11:30 AM",
+      "cells": {
+        "monday": { "subject": "Chemistry", "teacher": "Robert Chen", "room": "Lab 2", "color": "green" },
+        "tuesday": { "subject": "Mathematics", "teacher": "Sarah Connor", "room": "Room 101", "color": "blue" },
+        "wednesday": { "type": "empty" },
+        "thursday": { "subject": "Physics", "teacher": "Robert Chen", "room": "Lab 1", "color": "green" },
+        "friday": { "subject": "Biology", "teacher": "Lisa park", "room": "Lab 3", "color": "green" }
+      }
+    },
+    {
+      "id": 5,
+      "time": "10:30 AM - 11:30 AM",
+      "cells": {
+        "monday": { "subject": "World History", "teacher": "James porter", "room": "Room 103", "color": "orange" },
+        "tuesday": { "subject": "Geography", "teacher": "David kim", "room": "Room 108", "color": "orange" },
+        "wednesday": { "subject": "English Lit.", "teacher": "Maria santos", "room": "Room 205", "color": "purple" },
+        "thursday": { "subject": "Mathematics", "teacher": "Sarah Connor", "room": "Room 101", "color": "blue" },
+        "friday": { "subject": "Chemistry", "teacher": "Robert Chen", "room": "Lab 2", "color": "green" }
+      }
+    }
+  ]
+}

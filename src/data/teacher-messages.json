@@ -1,0 +1,19 @@
+{
+  "filterTabs": ["All", "Students", "Parents"],
+  "contacts": [
+    { "id": 1, "name": "Sarah Smith", "role": "Parent", "preview": "Thank you for the update about Alice...", "time": "10:42 AM", "unread": 2, "avatar": 25, "online": true, "subtitle": "Parent (Alice Freeman)" },
+    { "id": 2, "name": "Michael Johnson", "role": "Parent", "preview": "Is the assignment due tomorrow?", "time": "Yesterday", "unread": 0, "avatar": 53, "online": true },
+    { "id": 3, "name": "David Martinez", "role": "Student", "preview": "I had a question about problem 5", "time": "Yesterday", "unread": 1, "avatar": 12, "online": false },
+    { "id": 4, "name": "Emma Chen", "role": "Student", "preview": "Submitted my homework early", "time": "Apr 10", "unread": 0, "avatar": 5, "online": true },
+    { "id": 5, "name": "Priya Patel", "role": "Parent", "preview": "Can we schedule a meeting?", "time": "Apr 9", "unread": 0, "avatar": 44, "online": false }
+  ],
+  "activeContactId": 1,
+  "chatMessages": [
+    { "id": 1, "from": "me", "text": "Good morning! Alice had a great participation in class today.", "time": "09:35 AM" },
+    { "id": 2, "from": "them", "text": "That is wonderful to hear! She has been practicing at home.", "time": "09:40 AM" },
+    { "id": 3, "from": "me", "text": "Please remind her about the algebra assignment due Friday.", "time": "09:42 AM" },
+    { "id": 4, "from": "them", "text": "Thank you for the update about Alice's progress. We will make sure she completes it.", "time": "10:42 AM" }
+  ],
+  "chatDate": "Today, 09:30 AM",
+  "teacherAvatar": 47
+}

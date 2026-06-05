@@ -1,0 +1,59 @@
+{
+  "gradeOptions": [
+    { "id": 1, "value": "all", "label": "All Grades" },
+    { "id": 2, "value": "Grade 3", "label": "Grade 3" },
+    { "id": 3, "value": "Grade 4", "label": "Grade 4" },
+    { "id": 4, "value": "Grade 5", "label": "Grade 5" },
+    { "id": 5, "value": "Grade 6", "label": "Grade 6" },
+    { "id": 6, "value": "Grade 7", "label": "Grade 7" },
+    { "id": 7, "value": "Grade 8", "label": "Grade 8" }
+  ],
+  "deptOptions": [
+    { "id": 1, "value": "all", "label": "All Departments" },
+    { "id": 2, "value": "Mathematics", "label": "Mathematics" },
+    { "id": 3, "value": "Science", "label": "Science" },
+    { "id": 4, "value": "English", "label": "English" },
+    { "id": 5, "value": "History", "label": "History" },
+    { "id": 6, "value": "Physical Education", "label": "Physical Education" }
+  ],
+  "students": [
+    { "id": 1, "name": "Liam Smith", "rollNo": "ADM001", "className": "Grade 5 A", "grade": "Grade 5", "status": "present", "remarks": "" },
+    { "id": 2, "name": "Noah Johnson", "rollNo": "ADM002", "className": "Grade 4 A", "grade": "Grade 4", "status": "present", "remarks": "" },
+    { "id": 3, "name": "Emma Williams", "rollNo": "ADM003", "className": "Grade 3 B", "grade": "Grade 3", "status": "present", "remarks": "" },
+    { "id": 4, "name": "Olivia Brown", "rollNo": "ADM004", "className": "Grade 6 A", "grade": "Grade 6", "status": "absent", "remarks": "Sick leave" },
+    { "id": 5, "name": "Ava Davis", "rollNo": "ADM005", "className": "Grade 5 B", "grade": "Grade 5", "status": "present", "remarks": "" },
+    { "id": 6, "name": "Sophia Miller", "rollNo": "ADM006", "className": "Grade 7 A", "grade": "Grade 7", "status": "late", "remarks": "15 min late" },
+    { "id": 7, "name": "Isabella Wilson", "rollNo": "ADM007", "className": "Grade 3 A", "grade": "Grade 3", "status": "present", "remarks": "" },
+    { "id": 8, "name": "Mia Taylor", "rollNo": "ADM008", "className": "Grade 8 A", "grade": "Grade 8", "status": "present", "remarks": "" },
+    { "id": 9, "name": "Charlotte Anderson", "rollNo": "ADM009", "className": "Grade 4 B", "grade": "Grade 4", "status": "present", "remarks": "" },
+    { "id": 10, "name": "Amelia Thomas", "rollNo": "ADM010", "className": "Grade 6 B", "grade": "Grade 6", "status": "excused", "remarks": "Family event" },
+    { "id": 11, "name": "Harper Jackson", "rollNo": "ADM011", "className": "Grade 5 A", "grade": "Grade 5", "status": "present", "remarks": "" },
+    { "id": 12, "name": "Evelyn White", "rollNo": "ADM012", "className": "Grade 3 A", "grade": "Grade 3", "status": "present", "remarks": "" },
+    { "id": 13, "name": "Abigail Harris", "rollNo": "ADM013", "className": "Grade 7 B", "grade": "Grade 7", "status": "present", "remarks": "" },
+    { "id": 14, "name": "Emily Clark", "rollNo": "ADM014", "className": "Grade 8 B", "grade": "Grade 8", "status": "present", "remarks": "" },
+    { "id": 15, "name": "Elizabeth Lewis", "rollNo": "ADM015", "className": "Grade 4 A", "grade": "Grade 4", "status": "present", "remarks": "" },
+    { "id": 16, "name": "Sofia Walker", "rollNo": "ADM016", "className": "Grade 6 A", "grade": "Grade 6", "status": "present", "remarks": "" },
+    { "id": 17, "name": "Avery Hall", "rollNo": "ADM017", "className": "Grade 5 B", "grade": "Grade 5", "status": "present", "remarks": "" },
+    { "id": 18, "name": "Ella Allen", "rollNo": "ADM018", "className": "Grade 3 B", "grade": "Grade 3", "status": "present", "remarks": "" },
+    { "id": 19, "name": "Scarlett Young", "rollNo": "ADM019", "className": "Grade 7 A", "grade": "Grade 7", "status": "present", "remarks": "" },
+    { "id": 20, "name": "Grace King", "rollNo": "ADM020", "className": "Grade 8 A", "grade": "Grade 8", "status": "present", "remarks": "" },
+    { "id": 21, "name": "Chloe Wright", "rollNo": "ADM021", "className": "Grade 4 B", "grade": "Grade 4", "status": "present", "remarks": "" },
+    { "id": 22, "name": "Victoria Lopez", "rollNo": "ADM022", "className": "Grade 6 B", "grade": "Grade 6", "status": "absent", "remarks": "Sick leave" },
+    { "id": 23, "name": "Riley Hill", "rollNo": "ADM023", "className": "Grade 5 A", "grade": "Grade 5", "status": "present", "remarks": "" },
+    { "id": 24, "name": "Aria Scott", "rollNo": "ADM024", "className": "Grade 3 A", "grade": "Grade 3", "status": "present", "remarks": "" },
+    { "id": 25, "name": "Lily Green", "rollNo": "ADM025", "className": "Grade 7 B", "grade": "Grade 7", "status": "present", "remarks": "" }
+  ],
+  "staff": [
+    { "id": 1, "name": "James Anderson", "employeeId": "EMP-1001", "department": "Mathematics", "role": "Senior Teacher", "status": "present", "remarks": "" },
+    { "id": 2, "name": "Priya Sharma", "employeeId": "EMP-1002", "department": "Science", "role": "Head of department", "status": "present", "remarks": "" },
+    { "id": 3, "name": "Robert Chen", "employeeId": "EMP-1003", "department": "English", "role": "Teacher", "status": "present", "remarks": "" },
+    { "id": 4, "name": "Maria Santos", "employeeId": "EMP-1004", "department": "History", "role": "Teacher", "status": "present", "remarks": "" },
+    { "id": 5, "name": "David Wilson", "employeeId": "EMP-1005", "department": "Physical Education", "role": "Coach", "status": "present", "remarks": "" },
+    { "id": 6, "name": "Lisa Anderson", "employeeId": "EMP-1006", "department": "Mathematics", "role": "Teacher", "status": "present", "remarks": "" },
+    { "id": 7, "name": "Thomas Lee", "employeeId": "EMP-1007", "department": "Science", "role": "Teacher", "status": "absent", "remarks": "" },
+    { "id": 8, "name": "Anna Martinez", "employeeId": "EMP-1008", "department": "English", "role": "Teacher", "status": "present", "remarks": "" },
+    { "id": 9, "name": "Jennifer Davis", "employeeId": "EMP-1009", "department": "History", "role": "Teacher", "status": "present", "remarks": "" },
+    { "id": 10, "name": "Michael Brown", "employeeId": "EMP-1010", "department": "Mathematics", "role": "Teacher", "status": "present", "remarks": "" }
+  ],
+  "defaultDate": "14-04-2026"
+}

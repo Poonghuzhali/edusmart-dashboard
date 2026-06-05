@@ -1,0 +1,36 @@
+{
+  "welcomeName": "Sarah",
+  "attendanceData": [
+    { "id": 1, "month": "Jan", "value": 82 },
+    { "id": 2, "month": "Feb", "value": 85 },
+    { "id": 3, "month": "Mar", "value": 88 },
+    { "id": 4, "month": "Apr", "value": 86 },
+    { "id": 5, "month": "May", "value": 90 },
+    { "id": 6, "month": "Jun", "value": 87 },
+    { "id": 7, "month": "Jul", "value": 89 },
+    { "id": 8, "month": "Aug", "value": 91 }
+  ],
+  "performanceData": [
+    { "id": 1, "month": "Jan", "avg": 72, "top": 88 },
+    { "id": 2, "month": "Feb", "avg": 74, "top": 90 },
+    { "id": 3, "month": "Mar", "avg": 76, "top": 91 },
+    { "id": 4, "month": "Apr", "avg": 78, "top": 92 },
+    { "id": 5, "month": "May", "avg": 80, "top": 93 },
+    { "id": 6, "month": "Jun", "avg": 79, "top": 92 },
+    { "id": 7, "month": "Jul", "avg": 81, "top": 94 },
+    { "id": 8, "month": "Aug", "avg": 83, "top": 95 }
+  ],
+  "stats": [
+    { "id": 1, "icon": "Book", "value": "4", "title": "Total Classes This Semester", "change": "0%", "up": true, "accent": "violet" },
+    { "id": 2, "icon": "Users", "value": "15", "title": "Total Students vs last semester", "change": "5%", "up": true, "accent": "teal" },
+    { "id": 3, "icon": "Grid", "value": "86", "title": "Avg Attendance vs last month", "change": "3%", "up": true, "accent": "indigo" },
+    { "id": 4, "icon": "Activity", "value": "3", "title": "Pending Tasks vs Yesterday", "change": "1%", "up": false, "accent": "rose" }
+  ],
+  "timetable": [
+    { "id": 1, "time": "8.00AM (1h)", "subject": "Mathematics", "classInfo": "Class 10-A Room 201", "tag": "Lecture" }
+  ],
+  "recentActivity": [
+    { "id": 1, "text": "Emma Rodriguez submitted Assignment #3", "time": "10 minutes ago" },
+    { "id": 2, "text": "Attendance marked for class 10-A", "time": "1 hour ago" }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schoolProfile": {
+    "schoolName": "EduSmart International School",
+    "phone": "+1 (555) 123-4567",
+    "website": "www.edusmart.edu",
+    "email": "info@edusmart.edu",
+    "board": "CBSE",
+    "establishedYear": "1998",
+    "address": "123 Education Lane, Springfield, ST 12345"
+  },
+  "boardOptions": ["CBSE", "ICSE", "State Board", "IB"],
+  "permissions": [
+    { "id": 1, "module": "Dashboard", "icon": "Grid", "admin": true, "teacher": true, "staff": true, "parent": true },
+    { "id": 2, "module": "User Management", "icon": "Users", "admin": true, "teacher": false, "staff": false, "parent": false },
+    { "id": 3, "module": "Academic", "icon": "Book", "admin": true, "teacher": true, "staff": false, "parent": false },
+    { "id": 4, "module": "Attendance", "icon": "CalendarCheck", "admin": true, "teacher": true, "staff": true, "parent": true },
+    { "id": 5, "module": "Fees", "icon": "Rupee", "admin": true, "teacher": false, "staff": false, "parent": true },
+    { "id": 6, "module": "Reports", "icon": "BarChart", "admin": true, "teacher": true, "staff": false, "parent": true },
+    { "id": 7, "module": "Documents", "icon": "Folder", "admin": true, "teacher": false, "staff": false, "parent": false },
+    { "id": 8, "module": "Settings", "icon": "Settings", "admin": true, "teacher": false, "staff": false, "parent": false }
+  ],
+  "academicYears": [
+    { "id": 1, "label": "2025-2026", "range": "Apr 1, 2025 – Mar 31, 2026", "status": "Current" },
+    { "id": 2, "label": "2024-2025", "range": "Apr 1, 2024 – Mar 31, 2025", "status": "Past" },
+    { "id": 3, "label": "2023-2024", "range": "Apr 1, 2023 – Mar 31, 2024", "status": "Past" }
+  ],
+  "integrations": [
+    {
+      "id": 1,
+      "title": "Stripe",
+      "subtitle": "Accept online fee payments via cards",
+      "enabled": true,
+      "fields": [
+        { "id": 1, "label": "Secret Key", "value": "sk_live_••••••••••••••••" },
+        { "id": 2, "label": "WebHook Secret", "value": "whsec_••••••••••••••••" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Razorpay",
+      "subtitle": "Indian payment gateway for fees collect",
+      "enabled": true,
+      "fields": [
+        { "id": 1, "label": "Key ID", "value": "rzp_live_..." },
+        { "id": 2, "label": "Key Secret", "value": "••••••••••••••••" }
+      ]
+    }
+  ]
+}

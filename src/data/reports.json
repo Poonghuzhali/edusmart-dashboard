@@ -1,0 +1,73 @@
+{
+  "academicStats": [
+    { "id": 1, "value": "81.2%", "label": "Overall Average", "sub": "2.3% increased vs last term", "icon": "CalendarCheck", "tone": "blue" },
+    { "id": 2, "value": "92.6%", "label": "Pass Rate", "sub": "1.8% increased vs last term", "icon": "CheckCircle", "tone": "blue" },
+    { "id": 3, "value": "Olivia W.", "label": "Top Score", "sub": "Avg 96.4%", "icon": "Book", "tone": "purple" },
+    { "id": 4, "value": "14", "label": "Risk students", "sub": "Below 60% avg", "icon": "Users", "tone": "orange" }
+  ],
+  "subjectData": [
+    { "id": 1, "subject": "Maths", "avg": 82 },
+    { "id": 2, "subject": "English", "avg": 78 },
+    { "id": 3, "subject": "History", "avg": 74 },
+    { "id": 4, "subject": "Arts", "avg": 88 },
+    { "id": 5, "subject": "PE", "avg": 91 },
+    { "id": 6, "subject": "Science", "avg": 85 }
+  ],
+  "passFailData": [
+    { "id": 1, "grade": "Grade 3", "pass": 92, "fail": 8 },
+    { "id": 2, "grade": "Grade 4", "pass": 88, "fail": 12 },
+    { "id": 3, "grade": "Grade 5", "pass": 90, "fail": 10 },
+    { "id": 4, "grade": "Grade 6", "pass": 86, "fail": 14 },
+    { "id": 5, "grade": "Grade 7", "pass": 84, "fail": 16 },
+    { "id": 6, "grade": "Grade 8", "pass": 82, "fail": 18 }
+  ],
+  "financialStats": [
+    { "id": 1, "value": "$525k", "label": "Total Collected", "sub": "8.2% vs last year", "icon": "DollarSign", "tone": "green" },
+    { "id": 2, "value": "$48k", "label": "Pending dues", "sub": "24 students", "icon": "Warning", "tone": "orange" },
+    { "id": 3, "value": "$25k", "label": "Overdue Amounts", "sub": "12 Overdue", "icon": "TrendDown", "tone": "red" }
+  ],
+  "monthlyCollection": [
+    { "id": 1, "month": "Jan", "value": 42 },
+    { "id": 2, "month": "Feb", "value": 55 },
+    { "id": 3, "month": "Mar", "value": 68 },
+    { "id": 4, "month": "Apr", "value": 72 },
+    { "id": 5, "month": "May", "value": 80 },
+    { "id": 6, "month": "Jun", "value": 65 },
+    { "id": 7, "month": "Jul", "value": 58 },
+    { "id": 8, "month": "Aug", "value": 70 },
+    { "id": 9, "month": "Sep", "value": 75 },
+    { "id": 10, "month": "Oct", "value": 82 },
+    { "id": 11, "month": "Nov", "value": 78 },
+    { "id": 12, "month": "Dec", "value": 88 }
+  ],
+  "feeCategoryData": [
+    { "id": 1, "name": "Tuition", "value": 45, "color": "#7c6ce7" },
+    { "id": 2, "name": "Transport", "value": 20, "color": "#f472b6" },
+    { "id": 3, "name": "Activity", "value": 15, "color": "#38bdf8" },
+    { "id": 4, "name": "Library", "value": 10, "color": "#fb923c" },
+    { "id": 5, "name": "Other", "value": 10, "color": "#6366f1" }
+  ],
+  "attendanceStats": [
+    { "id": 1, "value": "91.2%", "label": "Overall Attendance", "sub": "1.5% vs last month", "icon": "CalendarCheck", "tone": "blue" },
+    { "id": 2, "value": "94.8%", "label": "Student Attendance", "sub": "0.8% vs last month", "icon": "Users", "tone": "purple" },
+    { "id": 3, "value": "96.1%", "label": "Staff Attendance", "sub": "0.3% vs last month", "icon": "CheckCircle", "tone": "green" },
+    { "id": 4, "value": "8.8%", "label": "Absent Rate", "sub": "2.1% vs last month", "icon": "TrendUp", "tone": "orange" }
+  ],
+  "monthlyAttendance": [
+    { "id": 1, "month": "Aug", "students": 88, "staff": 94 },
+    { "id": 2, "month": "Sep", "students": 90, "staff": 95 },
+    { "id": 3, "month": "Oct", "students": 89, "staff": 93 },
+    { "id": 4, "month": "Nov", "students": 91, "staff": 96 },
+    { "id": 5, "month": "Dec", "students": 87, "staff": 92 },
+    { "id": 6, "month": "Jan", "students": 92, "staff": 97 },
+    { "id": 7, "month": "Feb", "students": 90, "staff": 95 },
+    { "id": 8, "month": "Mar", "students": 93, "staff": 98 },
+    { "id": 9, "month": "Apr", "students": 91, "staff": 96 }
+  ],
+  "attendanceBreakdown": [
+    { "id": 1, "name": "Present", "value": 78, "color": "#7c6ce7" },
+    { "id": 2, "name": "Absent", "value": 12, "color": "#38bdf8" },
+    { "id": 3, "name": "Late", "value": 6, "color": "#fb923c" },
+    { "id": 4, "name": "Excuse", "value": 4, "color": "#f87171" }
+  ]
+}

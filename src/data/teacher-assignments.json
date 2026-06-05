@@ -1,0 +1,16 @@
+{
+  "statCards": [
+    { "id": 1, "value": 12, "label": "Active Assignments", "icon": "ClipboardList", "tone": "purple" },
+    { "id": 2, "value": 8, "label": "Needs Grading", "icon": "Clock", "tone": "yellow" },
+    { "id": 3, "value": 45, "label": "Completed", "icon": "CheckCircle", "tone": "green" }
+  ],
+  "classOptions": ["All Classes", "10-A", "10-B", "10-C", "10-D"],
+  "statusOptions": ["All Status", "Active", "Needs Grading", "Completed"],
+  "assignments": [
+    { "id": 1, "title": "Quadratic Equations Practice set", "files": 2, "classTag": "10-A", "due": "Apr 15 2026", "submitted": 28, "total": 30, "pct": 93, "status": "Active", "statusTone": "green", "action": "Grade" },
+    { "id": 2, "title": "Algebraic Expressions", "files": 1, "classTag": "10-C", "due": "Apr 13 2026", "dueLate": true, "submitted": 30, "total": 30, "pct": 100, "status": "Needs Grading", "statusTone": "yellow", "action": "Grade" },
+    { "id": 3, "title": "Statistics chapter 4 problems", "files": 3, "classTag": "10-D", "due": "Apr 18 2026", "submitted": 25, "total": 25, "pct": 100, "status": "Completed", "statusTone": "purple", "action": "View" },
+    { "id": 4, "title": "Trigonometry Introduction Quiz", "files": 1, "classTag": "10-B", "due": "Apr 10 2026", "submitted": 12, "total": 24, "pct": 50, "status": "Active", "statusTone": "green", "action": "Grade" },
+    { "id": 5, "title": "Coordinate Geometry Final Project", "files": 0, "group": true, "classTag": "10-A", "due": "Apr 25 2026", "submitted": 6, "total": 8, "pct": 75, "status": "Active", "statusTone": "green", "action": "Grade", "groupLabel": "Groups" }
+  ]
+}

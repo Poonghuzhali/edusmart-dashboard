@@ -1,0 +1,22 @@
+{
+  "profile": {
+    "initials": "SJ",
+    "displayName": "Ms. Sarah Johnson",
+    "subtitle": "Mathematics. Science & Mathematics",
+    "joined": "Joined August 2019",
+    "fullName": "Ms. Sarah Johnson",
+    "email": "Sarah.johnson@oakwood.edu",
+    "phone": "6390459849",
+    "subject": "Mathematics",
+    "department": "Science & Mathematics",
+    "bio": "Experienced mathematics teacher with a passion for helping students excel in algebra and statistics."
+  },
+  "notifications": [
+    {
+      "id": 1,
+      "title": "Assignment Submissions",
+      "description": "Get notified when students submit assignments",
+      "enabled": true
+    }
+  ]
+}

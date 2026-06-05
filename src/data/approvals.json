@@ -1,0 +1,20 @@
+{
+  "summaryStats": [
+    { "id": 1, "value": "2", "label": "Approve this week", "sub": "+12% vs last week", "subTone": "green", "icon": "CheckCircle", "tone": "green" },
+    { "id": 2, "value": "3", "label": "Pending review", "sub": "3 new today", "subTone": "yellow", "icon": "Clock", "tone": "yellow" },
+    { "id": 3, "value": "1", "label": "Rejected this week", "sub": "-5% vs last week", "subTone": "red", "icon": "TrendDown", "tone": "red" }
+  ],
+  "statusOptions": ["All Status", "Pending", "Approved", "Rejected"],
+  "modeTabs": [
+    { "id": "all", "label": "All Request", "icon": "Building" },
+    { "id": "pending", "label": "Pending", "icon": "Building" }
+  ],
+  "requests": [
+    { "id": 1, "name": "Sarah Connor", "role": "Teacher", "desc": "Medical Leave request for 3 days", "category": "Leave Request", "date": "2026-04-10", "status": "Pending" },
+    { "id": 2, "name": "Sarah Connor", "role": "Teacher", "desc": "Medical Leave request for 3 days", "category": "Leave Request", "date": "2026-04-10", "status": "Approved" },
+    { "id": 3, "name": "Sarah Connor", "role": "Teacher", "desc": "Medical Leave request for 3 days", "category": "Leave Request", "date": "2026-04-10", "status": "Approved" },
+    { "id": 4, "name": "Sarah Connor", "role": "Teacher", "desc": "Medical Leave request for 3 days", "category": "Leave Request", "date": "2026-04-10", "status": "Pending" },
+    { "id": 5, "name": "Sarah Connor", "role": "Teacher", "desc": "Medical Leave request for 3 days", "category": "Leave Request", "date": "2026-04-10", "status": "Pending" },
+    { "id": 6, "name": "Sarah Connor", "role": "Teacher", "desc": "Medical Leave request for 3 days", "category": "Leave Request", "date": "2026-04-10", "status": "Rejected" }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Annual sports Day 2026",
+      "content": "We are excited to announce our Annual Sports Day on April 25th. All students from Grade 3-12 are expected to participate. Parents are welcome to attend.",
+      "priority": "High",
+      "priorityTone": "red",
+      "accent": "red",
+      "audience": "Everyone",
+      "date": "2026-04-10",
+      "author": "By principal Johnson",
+      "expires": "Expires 2026-04-25"
+    },
+    {
+      "id": 2,
+      "title": "Parent teacher conference schedula",
+      "content": "Parent-Teacher conferences will be held from May 5-7. Please book your slot through the parent portal. Slots are limited and assigned on first-come basis.",
+      "priority": "Medium",
+      "priorityTone": "orange",
+      "accent": "orange",
+      "audience": "Parent, Staff",
+      "date": "2026-04-08",
+      "author": "By principal Johnson"
+    },
+    {
+      "id": 3,
+      "title": "Library Book Return Reminder",
+      "content": "All borrowed library books must be returned by April 30th. Late returns will incur a fine of $2 per day. Please check your student account for outstanding items.",
+      "priority": "Low",
+      "priorityTone": "blue",
+      "accent": "blue",
+      "audience": "Student",
+      "date": "2026-04-05",
+      "author": "By principal Johnson"
+    },
+    {
+      "id": 4,
+      "title": "Science Fair Registration open",
+      "content": "Registration for the annual Science Fair is now open. Students in Grades 6-8 can submit their project proposals by April 20th. Winners receive scholarships.",
+      "priority": "Medium",
+      "priorityTone": "orange",
+      "accent": "orange",
+      "audience": "Student",
+      "date": "2026-04-03",
+      "author": "By principal Johnson"
+    }
+  ],
+  "notificationGroups": [
+    {
+      "id": 1,
+      "label": "Today",
+      "items": [
+        { "id": 1, "title": "New Admission Request", "desc": "3 new admission requests pending review", "time": "08.30AM", "icon": "CheckCircle", "tone": "blue" },
+        { "id": 2, "title": "Fee payment overdue", "desc": "12 students have overdue fee payments", "time": "07.15AM", "icon": "Warning", "tone": "orange" },
+        { "id": 3, "title": "Attendance Alert", "desc": "Grade 5A has below 80% attendance today", "time": "09.00AM", "icon": "Warning", "tone": "orange" }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Yesterday",
+      "items": [
+        { "id": 4, "title": "System update", "desc": "Dashboard updated to version 2.4.1", "time": "08.30AM", "icon": "Info", "tone": "blue" },
+        { "id": 5, "title": "New exam schedule posted", "desc": "Term 2 exam schedule is now available", "time": "07.15AM", "icon": "Info", "tone": "blue" },
+        { "id": 6, "title": "Grade 5A Attendance marked", "desc": "28 of 32 students marked present", "time": "09.00AM", "icon": "CheckCircle", "tone": "green" }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Earlier",
+      "items": [
+        { "id": 7, "title": "Document uploaded", "desc": "New certificate template added", "time": "08.30AM", "icon": "Info", "tone": "blue" }
+      ]
+    }
+  ],
+  "channels": [
+    { "id": 1, "key": "email", "label": "Email", "desc": "Send rich HTML email to selected groups", "icon": "Mail" },
+    { "id": 2, "key": "sms", "label": "SMS", "desc": "Send text messages to mobile numbers", "icon": "MessageSquare" },
+    { "id": 3, "key": "both", "label": "Email & SMS", "desc": "Send via both email and SMS channels", "icon": "Radio" }
+  ],
+  "recipientGroups": [
+    { "id": 1, "key": "students", "label": "All Students", "count": 512 },
+    { "id": 2, "key": "parents", "label": "All Parents", "count": 248 },
+    { "id": 3, "key": "staff", "label": "All Staff", "count": 64 },
+    { "id": 4, "key": "class", "label": "Specific class", "count": null }
+  ],
+  "broadcastStats": [
+    { "id": 1, "label": "Recipients", "value": "512+", "tone": "green", "icon": "Users" },
+    { "id": 2, "label": "Total Sent", "value": "807", "tone": "blue", "icon": "Send" },
+    { "id": 3, "label": "Email", "value": "3", "tone": "purple", "icon": "Mail" },
+    { "id": 4, "label": "SMS", "value": "1", "tone": "orange", "icon": "MessageSquare" }
+  ]
+}

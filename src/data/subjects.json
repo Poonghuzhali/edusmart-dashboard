@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Mathematics", "code": "MATH101", "teacher": "Sarah Connor", "hours": "5h", "grade": "Grade 5" },
+  { "id": 2, "name": "Science", "code": "SCI101", "teacher": "Robert Chen", "hours": "5h", "grade": "Grade 3" },
+  { "id": 3, "name": "English", "code": "ENG101", "teacher": "Maria santos", "hours": "5h", "grade": "Grade 7" },
+  { "id": 4, "name": "History", "code": "HIS101", "teacher": "James porter", "hours": "5h", "grade": "Grade 4" },
+  { "id": 5, "name": "Arts", "code": "ART101", "teacher": "Lisa park", "hours": "5h", "grade": "Grade 8" },
+  { "id": 6, "name": "Physical education", "code": "PE101", "teacher": "David kim", "hours": "5h", "grade": "Grade 6" }
+]
