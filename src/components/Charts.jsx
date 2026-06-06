@@ -74,6 +74,10 @@ export default function Charts() {
                 tick={{ fill: '#9aa0b4', fontSize: 12 }}
               />
               <Tooltip
+                formatter={(v, _name, props) => {
+                  const raw = props?.payload?.raw
+                  return raw != null ? [`$${raw.toLocaleString()}`, 'Collected'] : [`${v}%`, 'Collected']
+                }}
                 cursor={{ fill: 'rgba(124,108,231,0.08)' }}
                 contentStyle={{ borderRadius: 10, border: '1px solid #eef0f6' }}
               />

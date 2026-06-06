@@ -1,4 +1,3 @@
-import { useState, useMemo } from 'react'
 import { CheckCircle, XCircle } from '../icons.jsx'
 import { useData } from '../context/DataContext.jsx'
 import { useToast } from '../context/ToastContext.jsx'
@@ -7,14 +6,10 @@ import { resolveIcon } from '../utils/iconsMap.js'
 export default function BottomCards() {
   const { dashboardAdmin, approvalRequests } = useData()
   const { showToast } = useToast()
-  const [handledApprovalIds, setHandledApprovalIds] = useState([])
 
   const activities = dashboardAdmin.activities || []
   const alerts = dashboardAdmin.alerts || []
-  const approvals = useMemo(
-    () => (dashboardAdmin.approvals || []).filter((a) => !handledApprovalIds.includes(a.id)),
-    [dashboardAdmin.approvals, handledApprovalIds],
-  )
+  const approvals = dashboardAdmin.approvals || []
 
   const findLinkedRequest = (approval) => {
     const byId = approvalRequests.items.find((r) => r.id === approval.id && r.status === 'Pending')
@@ -32,7 +27,6 @@ export default function BottomCards() {
     } else {
       showToast(`${status} recorded for ${approval.name}`, 'success')
     }
-    setHandledApprovalIds((prev) => [...prev, approval.id])
   }
 
   return (
@@ -43,7 +37,9 @@ export default function BottomCards() {
           <p>Live update from today</p>
         </div>
         <div className="activity-list">
-          {activities.map((a) => {
+          {activities.length === 0 ? (
+            <p className="ann-recent-empty">No recent activity yet.</p>
+          ) : activities.map((a) => {
             const Icon = resolveIcon(a.icon)
             return (
               <div className="activity-item" key={a.id}>
@@ -65,7 +61,7 @@ export default function BottomCards() {
         <div className="card-head head-with-badge">
           <div>
             <h3>Alert</h3>
-            <p>{alerts.length} unread notifications</p>
+            <p>{alerts.length} live notifications</p>
           </div>
           <span className="pill pill-red">{alerts.length} New</span>
         </div>
@@ -94,7 +90,9 @@ export default function BottomCards() {
           <span className="pill pill-grey">{approvals.length}</span>
         </div>
         <div className="approval-list">
-          {approvals.map((a) => (
+          {approvals.length === 0 ? (
+            <p className="ann-recent-empty">No pending approvals.</p>
+          ) : approvals.map((a) => (
             <div className="approval-item" key={a.id}>
               <div className="approval-top">
                 <strong>{a.name}</strong>

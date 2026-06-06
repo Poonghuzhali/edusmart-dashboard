@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Login from './components/Login.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import Topbar from './components/Topbar.jsx'
@@ -13,10 +13,15 @@ import Documents from './components/Documents.jsx'
 import SettingsPage from './components/SettingsPage.jsx'
 import Approvals from './components/Approvals.jsx'
 import TeacherApp from './components/teacher/TeacherApp.jsx'
+import { usePortalPage } from './hooks/usePortalPage.js'
+import {
+  ADMIN_PAGES, clearAuth, clearRoute, loadAuth, parseHash,
+  readSession, saveAuth, setRoute,
+} from './utils/session.js'
 
 function AdminApp({ onLogout }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [page, setPage] = useState('dashboard')
+  const [page, navigate] = usePortalPage('admin', ADMIN_PAGES, 'dashboard')
 
   const handleLogout = () => {
     setSidebarOpen(false)
@@ -28,7 +33,7 @@ function AdminApp({ onLogout }) {
       <Sidebar
         open={sidebarOpen}
         activePage={page}
-        onNavigate={(p) => { setPage(p); setSidebarOpen(false) }}
+        onNavigate={(p) => { navigate(p); setSidebarOpen(false) }}
         onClose={() => setSidebarOpen(false)}
         onLogout={handleLogout}
       />
@@ -57,18 +62,53 @@ function AdminApp({ onLogout }) {
 }
 
 export default function App() {
-  const [authed, setAuthed] = useState(false)
-  const [role, setRole] = useState('admin')
+  const initial = readSession()
+  const [authed, setAuthed] = useState(initial.authed)
+  const [role, setRole] = useState(initial.role)
 
-  const handleSignIn = (selectedRole) => {
+  useEffect(() => {
+    if (initial.authed) {
+      const route = parseHash()
+      if (!route || route.role !== initial.role) {
+        setRoute(initial.role, initial.page)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const savedRole = loadAuth()
+      const route = parseHash()
+
+      if (!savedRole) {
+        setAuthed(false)
+        setRole('admin')
+        return
+      }
+
+      if (route) {
+        setAuthed(true)
+        setRole(route.role)
+      }
+    }
+
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
+  const handleSignIn = useCallback((selectedRole) => {
+    saveAuth(selectedRole)
     setRole(selectedRole)
     setAuthed(true)
-  }
+    setRoute(selectedRole, 'dashboard')
+  }, [])
 
-  const handleLogout = () => {
+  const handleLogout = useCallback(() => {
+    clearAuth()
+    clearRoute()
     setAuthed(false)
     setRole('admin')
-  }
+  }, [])
 
   if (!authed) {
     return <Login onSignIn={handleSignIn} />

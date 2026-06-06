@@ -19,11 +19,13 @@ export default function TeacherAttendance() {
     teacherAttendanceStudents,
     setTeacherAttendanceStudents,
     teacherAttendanceMeta,
+    teacherAttendanceChart,
   } = useData()
   const { showToast } = useToast()
   const {
-    selectedClass, selectedDate, studentCount, monthlyData, classProgress,
+    selectedClass, selectedDate, studentCount, classProgress,
   } = teacherAttendanceMeta
+  const monthlyData = teacherAttendanceChart
 
   const counts = useMemo(() => ({
     Present: teacherAttendanceStudents.filter((s) => s.status === 'Present').length,

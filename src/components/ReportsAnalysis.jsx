@@ -146,6 +146,8 @@ function FinancialPanel({ reports }) {
 }
 
 function AttendancePanel({ reports }) {
+  const breakdownTotal = reports.attendanceBreakdown?.reduce((s, r) => s + r.value, 0) || 100
+
   return (
     <>
       <div className="rep-stats rep-stats--4">
@@ -201,7 +203,7 @@ function AttendancePanel({ reports }) {
                     <Cell key={entry.name} fill={entry.color} />
                   ))}
                 </Pie>
-                <text x="45%" y="50%" textAnchor="middle" dominantBaseline="middle" className="rep-donut-center">100</text>
+                <text x="45%" y="50%" textAnchor="middle" dominantBaseline="middle" className="rep-donut-center">{breakdownTotal}</text>
                 <Legend
                   layout="horizontal"
                   align="center"

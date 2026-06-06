@@ -11,10 +11,12 @@ import TeacherAssignments from './TeacherAssignments.jsx'
 import TeacherExams from './TeacherExams.jsx'
 import TeacherMessages from './TeacherMessages.jsx'
 import TeacherSettings from './TeacherSettings.jsx'
+import { usePortalPage } from '../../hooks/usePortalPage.js'
+import { TEACHER_PAGES } from '../../utils/session.js'
 
 export default function TeacherApp({ onLogout }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [page, setPage] = useState('dashboard')
+  const [page, navigate] = usePortalPage('teacher', TEACHER_PAGES, 'dashboard')
   const [aiOpen, setAiOpen] = useState(false)
 
   const handleLogout = () => {
@@ -27,7 +29,7 @@ export default function TeacherApp({ onLogout }) {
       <TeacherSidebar
         open={sidebarOpen}
         activePage={page}
-        onNavigate={(p) => { setPage(p); setSidebarOpen(false) }}
+        onNavigate={(p) => { navigate(p); setSidebarOpen(false) }}
         onClose={() => setSidebarOpen(false)}
         onLogout={handleLogout}
       />
@@ -40,7 +42,7 @@ export default function TeacherApp({ onLogout }) {
 
         <main className="content">
           {page === 'dashboard' && <TeacherDashboard />}
-          {page === 'my-classes' && <TeacherClasses onNavigate={setPage} />}
+          {page === 'my-classes' && <TeacherClasses onNavigate={navigate} />}
           {page === 'students' && <TeacherStudents />}
           {page === 'attendance' && <TeacherAttendance />}
           {page === 'assignment' && <TeacherAssignments />}

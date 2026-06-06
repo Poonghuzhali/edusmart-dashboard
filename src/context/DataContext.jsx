@@ -25,6 +25,13 @@ import teacherExamsSeed from '../data/teacher-exams.json'
 import teacherMessagesSeed from '../data/teacher-messages.json'
 import teacherSettingsSeed from '../data/teacher-settings.json'
 import teacherAiSeed from '../data/teacher-ai-assistant.json'
+import {
+  computeDashboardAdmin,
+  computeFeeSummary,
+  computeReports,
+  computeTeacherDashboard,
+  computeTeacherAttendanceMonthly,
+} from '../utils/analytics.js'
 
 const DataContext = createContext(null)
 
@@ -67,8 +74,8 @@ export function DataProvider({ children }) {
   const approvalRequests = useCollection(approvalsSeed.requests)
 
   const [timetable] = useState(() => clone(timetableSeed))
-  const [reports] = useState(() => clone(reportsSeed))
-  const [dashboardAdmin] = useState(() => clone(dashboardAdminSeed))
+  const [reportsSeedState] = useState(() => clone(reportsSeed))
+  const [dashboardAdminSeedState] = useState(() => clone(dashboardAdminSeed))
   const [attendanceAdminStudents, setAttendanceAdminStudents] = useState(() => clone(attendanceAdminSeed.students))
   const [attendanceAdminStaff, setAttendanceAdminStaff] = useState(() => clone(attendanceAdminSeed.staff))
   const [permissions, setPermissions] = useState(() => clone(settingsSeed.permissions))
@@ -85,6 +92,65 @@ export function DataProvider({ children }) {
   const [messageState, setMessageState] = useState(() => clone(teacherMessagesSeed))
   const [teacherProfile, setTeacherProfile] = useState(() => clone(teacherSettingsSeed.profile))
   const [teacherNotifications, setTeacherNotifications] = useState(() => clone(teacherSettingsSeed.notifications))
+  const [teacherDashboardSeedState] = useState(() => clone(teacherDashboardSeed))
+
+  const dashboardAdmin = useMemo(() => computeDashboardAdmin({
+    students: students.items,
+    staff: staff.items,
+    classes: classes.items,
+    payments: payments.items,
+    pendingDues: pendingDues.items,
+    announcements: announcements.items,
+    approvalRequests: approvalRequests.items,
+    attendanceAdminStudents,
+    attendanceAdminStaff,
+    seed: dashboardAdminSeedState,
+  }), [
+    students.items, staff.items, classes.items, payments.items, pendingDues.items,
+    announcements.items, approvalRequests.items, attendanceAdminStudents,
+    attendanceAdminStaff, dashboardAdminSeedState,
+  ])
+
+  const reports = useMemo(() => computeReports({
+    students: students.items,
+    staff: staff.items,
+    subjects: subjects.items,
+    payments: payments.items,
+    pendingDues: pendingDues.items,
+    attendanceAdminStudents,
+    attendanceAdminStaff,
+    examsAdmin: examsAdmin.items,
+    seed: reportsSeedState,
+  }), [
+    students.items, staff.items, subjects.items, payments.items, pendingDues.items,
+    attendanceAdminStudents, attendanceAdminStaff, examsAdmin.items, reportsSeedState,
+  ])
+
+  const feeSummary = useMemo(
+    () => computeFeeSummary(payments.items, pendingDues.items, feesSeed.summaryStats),
+    [payments.items, pendingDues.items],
+  )
+
+  const teacherDashboard = useMemo(() => computeTeacherDashboard({
+    teacherClasses,
+    teacherStudents,
+    teacherAttendanceStudents,
+    teacherAssignments,
+    teacherMarks,
+    teacherProfile,
+    seed: teacherDashboardSeedState,
+  }), [
+    teacherClasses, teacherStudents, teacherAttendanceStudents,
+    teacherAssignments, teacherMarks, teacherProfile, teacherDashboardSeedState,
+  ])
+
+  const teacherAttendanceChart = useMemo(
+    () => computeTeacherAttendanceMonthly(
+      teacherAttendanceStudents,
+      teacherAttendanceSeed.monthlyData,
+    ),
+    [teacherAttendanceStudents],
+  )
 
   const value = useMemo(() => ({
     grades: gradesSeed,
@@ -98,7 +164,7 @@ export function DataProvider({ children }) {
     feeCategories,
     payments,
     pendingDues,
-    feeSummary: feesSeed.summaryStats,
+    feeSummary,
     announcements,
     notificationGroups,
     setNotificationGroups,
@@ -135,7 +201,8 @@ export function DataProvider({ children }) {
     boardOptions: settingsSeed.boardOptions,
     reports,
     dashboardAdmin,
-    teacherDashboard: teacherDashboardSeed,
+    teacherDashboard,
+    teacherAttendanceChart,
     teacherClasses,
     setTeacherClasses,
     teacherStudents,
@@ -167,7 +234,8 @@ export function DataProvider({ children }) {
     attendanceAdminStudents, attendanceAdminStaff, permissions, academicYears,
     schoolProfile, integrations, teacherClasses, teacherStudents,
     teacherAttendanceStudents, teacherAssignments, teacherMarks, messageState,
-    teacherProfile, teacherNotifications,
+    teacherProfile, teacherNotifications, dashboardAdmin, reports, feeSummary,
+    teacherDashboard, teacherAttendanceChart,
   ])
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>
