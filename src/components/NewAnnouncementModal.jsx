@@ -4,6 +4,7 @@ import { FormField, FormAlert } from './FormField.jsx'
 import { useData } from '../context/DataContext.jsx'
 import { useToast } from '../context/ToastContext.jsx'
 import { validateRequired, validatePriority, runValidation } from '../utils/validation.js'
+import { sendAnnouncementEmail } from '../utils/announcementEmail.js'
 
 const priorityToneMap = {
   high: 'red',
@@ -40,6 +41,7 @@ export default function NewAnnouncementModal({ open, onClose, showRecentList = f
   const [publishMode, setPublishMode] = useState('now')
   const [errors, setErrors] = useState({})
   const [formMessage, setFormMessage] = useState('')
+  const [sending, setSending] = useState(false)
 
   const recentAnnouncements = useMemo(() => {
     return [...announcements.items]
@@ -78,7 +80,7 @@ export default function NewAnnouncementModal({ open, onClose, showRecentList = f
     onClose()
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const { valid, errors: fieldErrors } = runValidation({
       title: [() => validateRequired(title, 'Title')],
@@ -108,15 +110,27 @@ export default function NewAnnouncementModal({ open, onClose, showRecentList = f
     if (isEdit) {
       announcements.update(announcement.id, payload)
       showToast('Announcement updated', 'success')
-    } else {
-      announcements.add({
-        ...payload,
-        date: new Date().toISOString().slice(0, 10),
-        author: 'By Admin Office',
-      })
-      showToast('Announcement published', 'success')
+      handleClose()
+      return
     }
-    handleClose()
+
+    const newAnnouncement = {
+      ...payload,
+      date: new Date().toISOString().slice(0, 10),
+      author: 'By Admin Office',
+    }
+
+    announcements.add(newAnnouncement)
+    setSending(true)
+    try {
+      await sendAnnouncementEmail(newAnnouncement)
+      showToast('Announcement published and sent to your email', 'success')
+    } catch {
+      showToast('Announcement published, but email could not be sent. Check your inbox to activate FormSubmit once.', 'error')
+    } finally {
+      setSending(false)
+      handleClose()
+    }
   }
 
   return (
@@ -227,8 +241,8 @@ export default function NewAnnouncementModal({ open, onClose, showRecentList = f
             <button type="button" className="btn modal-btn-cancel" onClick={handleClose}>
               Cancel
             </button>
-            <button type="submit" className="btn btn-primary modal-btn-submit">
-              {isEdit ? 'Save Changes' : 'Publish'}
+            <button type="submit" className="btn btn-primary modal-btn-submit" disabled={sending}>
+              {sending ? 'Sending…' : (isEdit ? 'Save Changes' : 'Publish')}
             </button>
           </div>
         </form>
