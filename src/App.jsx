@@ -13,6 +13,7 @@ import Documents from './components/Documents.jsx'
 import SettingsPage from './components/SettingsPage.jsx'
 import Approvals from './components/Approvals.jsx'
 import TeacherApp from './components/teacher/TeacherApp.jsx'
+import ParentApp from './components/parent/ParentApp.jsx'
 import { usePortalPage } from './hooks/usePortalPage.js'
 import {
   ADMIN_PAGES, clearAuth, clearRoute, loadAuth, parseHash,
@@ -96,8 +97,8 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
-  const handleSignIn = useCallback((selectedRole) => {
-    saveAuth(selectedRole)
+  const handleSignIn = useCallback((selectedRole, parentEmail = null) => {
+    saveAuth(selectedRole, parentEmail)
     setRole(selectedRole)
     setAuthed(true)
     setRoute(selectedRole, 'dashboard')
@@ -116,6 +117,10 @@ export default function App() {
 
   if (role === 'teacher') {
     return <TeacherApp onLogout={handleLogout} />
+  }
+
+  if (role === 'parent') {
+    return <ParentApp onLogout={handleLogout} />
   }
 
   return <AdminApp onLogout={handleLogout} />

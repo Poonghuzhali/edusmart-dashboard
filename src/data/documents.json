@@ -8,7 +8,7 @@
   "documents": [
     { "id": 1, "title": "Enrollment Certificate - Liam Smith", "meta": "Liam smith . 2026-03-01 . 245KB . By Admin Office", "tag": "Certificates", "tagTone": "green", "iconTone": "red" },
     { "id": 2, "title": "Report Card - Term 2 - Emily Brown", "meta": "Emily Brown . 2026-03-05 . 180KB . By Sarah Johnson", "tag": "Report Card", "tagTone": "purple", "iconTone": "red" },
-    { "id": 3, "title": "Student ID Card - Noah Johnson", "meta": "Noah Johnson . 2026-02-28 . 95KB . By Admin Office", "tag": "ID Card", "tagTone": "orange", "iconTone": "blue" },
+    { "id": 3, "title": "Student ID Card - Noah Williams", "meta": "Noah Williams . 2026-02-28 . 95KB . By Admin Office", "tag": "ID Card", "tagTone": "orange", "iconTone": "blue" },
     { "id": 4, "title": "Medical Record - Sophia Lee", "meta": "Sophia Lee . 2026-02-15 . 320KB . By Nurse Office", "tag": "Other", "tagTone": "gray", "iconTone": "red" },
     { "id": 5, "title": "Transfer Certificate - Ethan Miller", "meta": "Ethan Miller . 2026-01-20 . 210KB . By Admin Office", "tag": "Certificates", "tagTone": "green", "iconTone": "red" },
     { "id": 6, "title": "Report Card - Term 1 - Ava Wilson", "meta": "Ava Wilson . 2026-01-10 . 175KB . By James Porter", "tag": "Report Card", "tagTone": "purple", "iconTone": "red" }
@@ -22,7 +22,7 @@
   "certificates": [
     { "id": 1, "title": "Merit Certificate", "student": "Emily Brown", "issued": "2026-03-15", "badge": "Merit", "tone": "yellow", "icon": "Medal" },
     { "id": 2, "title": "Completion Certificate", "student": "Liam Smith", "issued": "2026-03-15", "badge": "Completion", "tone": "purple", "icon": "GradCap" },
-    { "id": 3, "title": "Attendance Certificate", "student": "Naoh Johnson", "issued": "2026-03-15", "badge": "Attendance", "tone": "green", "icon": "Shield" }
+    { "id": 3, "title": "Attendance Certificate", "student": "Noah Williams", "issued": "2026-03-15", "badge": "Attendance", "tone": "green", "icon": "Shield" }
   ],
   "typeOptions": ["All Types", "Certificates", "Report Card", "ID Card", "Other"]
 }

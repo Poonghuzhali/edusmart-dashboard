@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
 import studentsSeed from '../data/students.json'
 import staffSeed from '../data/staff.json'
@@ -18,7 +18,6 @@ import attendanceAdminSeed from '../data/attendance-admin.json'
 import gradesSeed from '../data/grades.json'
 import teacherDashboardSeed from '../data/teacher-dashboard.json'
 import teacherClassesSeed from '../data/teacher-classes.json'
-import teacherStudentsSeed from '../data/teacher-students.json'
 import teacherAttendanceSeed from '../data/teacher-attendance.json'
 import teacherAssignmentsSeed from '../data/teacher-assignments.json'
 import teacherExamsSeed from '../data/teacher-exams.json'
@@ -32,6 +31,16 @@ import {
   computeTeacherDashboard,
   computeTeacherAttendanceMonthly,
 } from '../utils/analytics.js'
+import {
+  buildTeacherClassOptions,
+  studentToTeacherStudent,
+  syncAttendanceStaff,
+  syncAttendanceStudents,
+  syncParentsWithStudents,
+  syncPaymentStudentFields,
+  syncTeacherAttendance,
+  syncTeacherMarks,
+} from '../utils/userData.js'
 
 const DataContext = createContext(null)
 
@@ -65,8 +74,12 @@ export function DataProvider({ children }) {
   const subjects = useCollection(subjectsSeed)
   const examsAdmin = useCollection(examsAdminSeed)
   const feeCategories = useCollection(feesSeed.feeCategories)
-  const payments = useCollection(feesSeed.payments)
-  const pendingDues = useCollection(feesSeed.pendingDues)
+  const payments = useCollection(
+    syncPaymentStudentFields(studentsSeed, feesSeed.payments),
+  )
+  const pendingDues = useCollection(
+    syncPaymentStudentFields(studentsSeed, feesSeed.pendingDues),
+  )
   const announcements = useCollection(communicationSeed.announcements)
   const documents = useCollection(documentsSeed.documents)
   const studentRecords = useCollection(documentsSeed.studentRecords)
@@ -76,8 +89,8 @@ export function DataProvider({ children }) {
   const [timetable] = useState(() => clone(timetableSeed))
   const [reportsSeedState] = useState(() => clone(reportsSeed))
   const [dashboardAdminSeedState] = useState(() => clone(dashboardAdminSeed))
-  const [attendanceAdminStudents, setAttendanceAdminStudents] = useState(() => clone(attendanceAdminSeed.students))
-  const [attendanceAdminStaff, setAttendanceAdminStaff] = useState(() => clone(attendanceAdminSeed.staff))
+  const [attendanceStudentOverrides, setAttendanceStudentOverrides] = useState({})
+  const [attendanceStaffOverrides, setAttendanceStaffOverrides] = useState({})
   const [permissions, setPermissions] = useState(() => clone(settingsSeed.permissions))
   const [academicYears, setAcademicYears] = useState(() => clone(settingsSeed.academicYears))
   const [schoolProfile, setSchoolProfile] = useState(() => clone(settingsSeed.schoolProfile))
@@ -85,14 +98,69 @@ export function DataProvider({ children }) {
   const [notificationGroups, setNotificationGroups] = useState(() => clone(communicationSeed.notificationGroups))
 
   const [teacherClasses, setTeacherClasses] = useState(() => clone(teacherClassesSeed))
-  const [teacherStudents] = useState(() => clone(teacherStudentsSeed.students))
-  const [teacherAttendanceStudents, setTeacherAttendanceStudents] = useState(() => clone(teacherAttendanceSeed.students))
+  const [teacherAttendanceStudents, setTeacherAttendanceStudents] = useState(
+    () => syncTeacherAttendance(studentsSeed),
+  )
   const [teacherAssignments, setTeacherAssignments] = useState(() => clone(teacherAssignmentsSeed.assignments))
-  const [teacherMarks, setTeacherMarks] = useState(() => clone(teacherExamsSeed.marks))
+  const [teacherMarks, setTeacherMarks] = useState(
+    () => syncTeacherMarks(studentsSeed),
+  )
   const [messageState, setMessageState] = useState(() => clone(teacherMessagesSeed))
   const [teacherProfile, setTeacherProfile] = useState(() => clone(teacherSettingsSeed.profile))
   const [teacherNotifications, setTeacherNotifications] = useState(() => clone(teacherSettingsSeed.notifications))
   const [teacherDashboardSeedState] = useState(() => clone(teacherDashboardSeed))
+  const attendanceAdminStudents = useMemo(
+    () => syncAttendanceStudents(students.items, attendanceStudentOverrides),
+    [students.items, attendanceStudentOverrides],
+  )
+
+  const attendanceAdminStaff = useMemo(
+    () => syncAttendanceStaff(staff.items, attendanceStaffOverrides),
+    [staff.items, attendanceStaffOverrides],
+  )
+
+  const updateAttendanceStudent = useCallback((id, field, val) => {
+    setAttendanceStudentOverrides((prev) => ({
+      ...prev,
+      [id]: { ...prev[id], [field]: val },
+    }))
+  }, [])
+
+  const updateAttendanceStaffMember = useCallback((id, field, val) => {
+    setAttendanceStaffOverrides((prev) => ({
+      ...prev,
+      [id]: { ...prev[id], [field]: val },
+    }))
+  }, [])
+  useEffect(() => {
+    setTeacherAttendanceStudents((prev) => syncTeacherAttendance(students.items, prev))
+  }, [students.items])
+
+  useEffect(() => {
+    setTeacherMarks((prev) => syncTeacherMarks(students.items, prev))
+  }, [students.items])
+
+  useEffect(() => {
+    payments.setItems((prev) => syncPaymentStudentFields(students.items, prev))
+  }, [students.items])
+
+  useEffect(() => {
+    pendingDues.setItems((prev) => syncPaymentStudentFields(students.items, prev))
+  }, [students.items])
+
+  useEffect(() => {
+    parents.setItems((prev) => syncParentsWithStudents(students.items, prev))
+  }, [students.items])
+
+  const teacherStudents = useMemo(
+    () => students.items.map(studentToTeacherStudent),
+    [students.items],
+  )
+
+  const teacherStudentsMeta = useMemo(
+    () => ({ classOptions: buildTeacherClassOptions(students.items) }),
+    [students.items],
+  )
 
   const dashboardAdmin = useMemo(() => computeDashboardAdmin({
     students: students.items,
@@ -182,9 +250,9 @@ export function DataProvider({ children }) {
     approvalStatusOptions: approvalsSeed.statusOptions,
     approvalModeTabs: approvalsSeed.modeTabs,
     attendanceAdminStudents,
-    setAttendanceAdminStudents,
+    updateAttendanceStudent,
     attendanceAdminStaff,
-    setAttendanceAdminStaff,
+    updateAttendanceStaffMember,
     attendanceAdminMeta: {
       gradeOptions: attendanceAdminSeed.gradeOptions,
       deptOptions: attendanceAdminSeed.deptOptions,
@@ -206,10 +274,13 @@ export function DataProvider({ children }) {
     teacherClasses,
     setTeacherClasses,
     teacherStudents,
-    teacherStudentsMeta: { classOptions: teacherStudentsSeed.classOptions },
+    teacherStudentsMeta,
     teacherAttendanceStudents,
     setTeacherAttendanceStudents,
-    teacherAttendanceMeta: teacherAttendanceSeed,
+    teacherAttendanceMeta: {
+      ...teacherAttendanceSeed,
+      studentCount: teacherAttendanceStudents.length,
+    },
     teacherAssignments,
     setTeacherAssignments,
     teacherAssignmentStats: teacherAssignmentsSeed.statCards,
@@ -231,8 +302,9 @@ export function DataProvider({ children }) {
     students, staff, parents, classes, subjects, examsAdmin,
     feeCategories, payments, pendingDues, announcements, notificationGroups,
     documents, studentRecords, certificates, approvalRequests,
-    attendanceAdminStudents, attendanceAdminStaff, permissions, academicYears,
-    schoolProfile, integrations, teacherClasses, teacherStudents,
+    attendanceAdminStudents, attendanceAdminStaff, attendanceStudentOverrides,
+    attendanceStaffOverrides, permissions, academicYears,
+    schoolProfile, integrations, teacherClasses, teacherStudents, teacherStudentsMeta,
     teacherAttendanceStudents, teacherAssignments, teacherMarks, messageState,
     teacherProfile, teacherNotifications, dashboardAdmin, reports, feeSummary,
     teacherDashboard, teacherAttendanceChart,

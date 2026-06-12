@@ -6,6 +6,7 @@ import { useToast } from '../context/ToastContext.jsx'
 import {
   validateRequired, validateEmail, validatePhone, validateDate, runValidation,
 } from '../utils/validation.js'
+import { upsertParentForStudent } from '../utils/userData.js'
 import GradeSelect from './GradeSelect.jsx'
 
 function PhotoUpload() {
@@ -69,7 +70,7 @@ function resetAndClose(reset, onClose) {
 }
 
 export function AddStudentModal({ open, onClose, student = null }) {
-  const { students } = useData()
+  const { students, parents } = useData()
   const { showToast } = useToast()
   const isEdit = !!student
   const [firstName, setFirstName] = useState('')
@@ -159,15 +160,17 @@ export function AddStudentModal({ open, onClose, student = null }) {
     }
 
     if (isEdit) {
-      students.update(student.id, {
+      const updated = {
         name,
         email: email.trim(),
         grade: gradeClass,
         ...parentPayload,
-      })
+      }
+      students.update(student.id, updated)
+      upsertParentForStudent(parents, { ...student, ...updated })
       showToast(`${name} updated successfully`, 'success')
     } else {
-      students.add({
+      const newStudent = {
         name,
         email: email.trim(),
         studentId: `STU-${Date.now().toString().slice(-5)}`,
@@ -176,7 +179,9 @@ export function AddStudentModal({ open, onClose, student = null }) {
         status: 'Active',
         joined: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         avatar: Math.floor(Math.random() * 70) + 1,
-      })
+      }
+      students.add(newStudent)
+      upsertParentForStudent(parents, newStudent)
       showToast(`${name} added successfully`, 'success')
     }
     handleClose()

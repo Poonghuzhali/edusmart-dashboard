@@ -8,20 +8,20 @@
     { "id": 6, "name": "Sports Fee", "grades": "Grade 3-8", "amount": "$350", "frequency": "Quartely", "freqTone": "purple" }
   ],
   "payments": [
-    { "id": 1, "name": "Liam smith", "studentId": "STD-10231", "avatar": 12, "grade": "Grade 5 A", "feeType": "Tuition", "receipt": "RCP-24001", "amount": "$5,200", "paidDate": "2026-04-01", "status": "Paid", "method": "Bank Transfer" },
-    { "id": 2, "name": "Noah Johnson", "studentId": "STD-10232", "avatar": 15, "grade": "Grade 4 A", "feeType": "Transport", "receipt": "RCP-24002", "amount": "$1,200", "paidDate": "2026-04-02", "status": "Paid", "method": "Cash" },
-    { "id": 3, "name": "Emma Williams", "studentId": "STD-10233", "avatar": 5, "grade": "Grade 3 B", "feeType": "Activity", "receipt": "-", "amount": "$800", "paidDate": "-", "status": "Pending", "method": "-" },
-    { "id": 4, "name": "Olivia Brown", "studentId": "STD-10234", "avatar": 9, "grade": "Grade 6 A", "feeType": "Tuition", "receipt": "-", "amount": "$5,200", "paidDate": "-", "status": "Overdue", "method": "-" },
-    { "id": 5, "name": "Ava Davis", "studentId": "STD-10235", "avatar": 20, "grade": "Grade 5 B", "feeType": "Library", "receipt": "RCP-24005", "amount": "$400", "paidDate": "2026-03-28", "status": "Paid", "method": "UPI" },
-    { "id": 6, "name": "Sophia Miller", "studentId": "STD-10236", "avatar": 23, "grade": "Grade 7 A", "feeType": "Lab Fee", "receipt": "-", "amount": "$600", "paidDate": "-", "status": "Pending", "method": "-" },
-    { "id": 7, "name": "Isabella Wilson", "studentId": "STD-10237", "avatar": 32, "grade": "Grade 8 A", "feeType": "Sports", "receipt": "-", "amount": "$350", "paidDate": "-", "status": "Overdue", "method": "-" }
+    { "id": 1, "name": "Liam Smith", "studentId": "STU-24003", "avatar": 33, "grade": "Grade 5 A", "feeType": "Tuition", "receipt": "RCP-24001", "amount": "$5,200", "paidDate": "2026-04-01", "status": "Paid", "method": "Bank Transfer" },
+    { "id": 2, "name": "Noah Williams", "studentId": "STU-24005", "avatar": 15, "grade": "Grade 4 C", "feeType": "Transport", "receipt": "RCP-24002", "amount": "$1,200", "paidDate": "2026-04-02", "status": "Paid", "method": "Cash" },
+    { "id": 3, "name": "Emily Brown", "studentId": "STU-24002", "avatar": 5, "grade": "Grade 6 B", "feeType": "Activity", "receipt": "-", "amount": "$800", "paidDate": "-", "status": "Pending", "method": "-" },
+    { "id": 4, "name": "Sophia Lee", "studentId": "STU-24004", "avatar": 9, "grade": "Grade 7 A", "feeType": "Tuition", "receipt": "-", "amount": "$5,200", "paidDate": "-", "status": "Overdue", "method": "-" },
+    { "id": 5, "name": "Olivia Davis", "studentId": "STU-24006", "avatar": 20, "grade": "Grade 8 A", "feeType": "Library", "receipt": "RCP-24005", "amount": "$400", "paidDate": "2026-03-28", "status": "Paid", "method": "UPI" },
+    { "id": 6, "name": "Ava Wilson", "studentId": "STU-24008", "avatar": 23, "grade": "Grade 6 A", "feeType": "Lab Fee", "receipt": "-", "amount": "$600", "paidDate": "-", "status": "Pending", "method": "-" },
+    { "id": 7, "name": "Isabella Cruz", "studentId": "STU-24010", "avatar": 44, "grade": "Grade 8 A", "feeType": "Sports", "receipt": "-", "amount": "$350", "paidDate": "-", "status": "Overdue", "method": "-" }
   ],
   "pendingDues": [
-    { "id": 1, "name": "John Smith", "studentId": "STD-10245", "avatar": 11, "grade": "Grade 6- B", "feeType": "Transport", "dueAmount": "$6,200", "daysOverdue": "-", "dueDate": "2026-04-15", "status": "Pending" },
-    { "id": 2, "name": "Michael Chang", "studentId": "STD-10258", "avatar": 53, "grade": "Grade 4 - C", "feeType": "Exam", "dueAmount": "$5,400", "daysOverdue": "44D", "dueDate": "2026-03-15", "status": "Overdue" },
-    { "id": 3, "name": "Ethan jones", "studentId": "STD-10262", "avatar": 52, "grade": "Grade 6 - A", "feeType": "Tuition", "dueAmount": "$5,800", "daysOverdue": "38D", "dueDate": "2026-03-15", "status": "Overdue" },
-    { "id": 4, "name": "Omar Hassan", "studentId": "STD-10274", "avatar": 59, "grade": "Grade 12 - B", "feeType": "Lab Fee", "dueAmount": "$1,200", "daysOverdue": "-", "dueDate": "2026-04-20", "status": "Pending" },
-    { "id": 5, "name": "Priya Sharma", "studentId": "STD-10280", "avatar": 44, "grade": "Grade 5 - A", "feeType": "Activity", "dueAmount": "$800", "daysOverdue": "12D", "dueDate": "2026-04-01", "status": "Overdue" }
+    { "id": 1, "name": "Ethan Miller", "studentId": "STU-24007", "avatar": 52, "grade": "Grade 3 B", "feeType": "Transport", "dueAmount": "$1,200", "daysOverdue": "-", "dueDate": "2026-04-15", "status": "Pending" },
+    { "id": 2, "name": "Alex Johnson", "studentId": "STU-24001", "avatar": 12, "grade": "Grade 5 A", "feeType": "Tuition", "dueAmount": "$5,200", "daysOverdue": "44D", "dueDate": "2026-03-15", "status": "Overdue" },
+    { "id": 3, "name": "Chloe Adams", "studentId": "STU-24012", "avatar": 32, "grade": "Grade 6 C", "feeType": "Tuition", "dueAmount": "$5,200", "daysOverdue": "38D", "dueDate": "2026-03-15", "status": "Overdue" },
+    { "id": 4, "name": "Arjun Mehta", "studentId": "STU-24011", "avatar": 57, "grade": "Grade 3 A", "feeType": "Lab Fee", "dueAmount": "$600", "daysOverdue": "-", "dueDate": "2026-04-20", "status": "Pending" },
+    { "id": 5, "name": "Mason Taylor", "studentId": "STU-24009", "avatar": 68, "grade": "Grade 5 B", "feeType": "Activity", "dueAmount": "$800", "daysOverdue": "12D", "dueDate": "2026-04-01", "status": "Overdue" }
   ],
   "summaryStats": [
     { "id": 1, "label": "Total collected", "value": "$25,200", "icon": "CheckCircle", "tone": "green" },

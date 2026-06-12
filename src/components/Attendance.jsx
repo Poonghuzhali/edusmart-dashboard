@@ -58,10 +58,12 @@ function SummaryCards({ items, counts, staff }) {
 
 export default function Attendance() {
   const {
+    students,
+    staff,
     attendanceAdminStudents,
-    setAttendanceAdminStudents,
+    updateAttendanceStudent,
     attendanceAdminStaff,
-    setAttendanceAdminStaff,
+    updateAttendanceStaffMember,
     attendanceAdminMeta,
   } = useData()
   const { showToast } = useToast()
@@ -77,7 +79,9 @@ export default function Attendance() {
   const q = search.toLowerCase()
 
   const filteredStudents = useMemo(() => attendanceAdminStudents.filter((s) => {
-    const matchSearch = !q || s.name.toLowerCase().includes(q) || s.rollNo.toLowerCase().includes(q)
+    const matchSearch = !q || s.name.toLowerCase().includes(q)
+      || s.rollNo.toLowerCase().includes(q)
+      || (s.studentId && s.studentId.toLowerCase().includes(q))
     const matchGrade = gradeFilter === 'all' || s.grade === gradeFilter
     return matchSearch && matchGrade
   }), [attendanceAdminStudents, q, gradeFilter])
@@ -89,24 +93,24 @@ export default function Attendance() {
   }), [attendanceAdminStaff, q, deptFilter])
 
   const studentCounts = useMemo(() => ({
-    present: filteredStudents.filter((s) => s.status === 'present').length,
-    absent: filteredStudents.filter((s) => s.status === 'absent').length,
-    late: filteredStudents.filter((s) => s.status === 'late').length,
-    excused: filteredStudents.filter((s) => s.status === 'excused').length,
-  }), [filteredStudents])
+    present: attendanceAdminStudents.filter((s) => s.status === 'present').length,
+    absent: attendanceAdminStudents.filter((s) => s.status === 'absent').length,
+    late: attendanceAdminStudents.filter((s) => s.status === 'late').length,
+    excused: attendanceAdminStudents.filter((s) => s.status === 'excused').length,
+  }), [attendanceAdminStudents])
 
   const staffCounts = useMemo(() => ({
-    present: filteredStaff.filter((s) => s.status === 'present').length,
-    absent: filteredStaff.filter((s) => s.status === 'absent').length,
-    late: filteredStaff.filter((s) => s.status === 'late').length,
-  }), [filteredStaff])
+    present: attendanceAdminStaff.filter((s) => s.status === 'present').length,
+    absent: attendanceAdminStaff.filter((s) => s.status === 'absent').length,
+    late: attendanceAdminStaff.filter((s) => s.status === 'late').length,
+  }), [attendanceAdminStaff])
 
   const updateStudent = (id, field, val) => {
-    setAttendanceAdminStudents((prev) => prev.map((s) => (s.id === id ? { ...s, [field]: val } : s)))
+    updateAttendanceStudent(id, field, val)
   }
 
   const updateStaff = (id, field, val) => {
-    setAttendanceAdminStaff((prev) => prev.map((s) => (s.id === id ? { ...s, [field]: val } : s)))
+    updateAttendanceStaffMember(id, field, val)
   }
 
   const handleExport = () => {
@@ -141,7 +145,9 @@ export default function Attendance() {
       <div className="page-head att-head">
         <div>
           <h1>Attendance</h1>
-          <p>Track and manage student and staff attendance</p>
+          <p>
+            Track and manage student and staff attendance — {students.items.length} students, {staff.items.length} staff
+          </p>
         </div>
         <div className="page-actions">
           <button type="button" className="btn btn-ghost" onClick={handleExport}>
@@ -180,7 +186,7 @@ export default function Attendance() {
             <Search size={18} />
             <input
               type="text"
-              placeholder="Search Student or roll no......"
+              placeholder="Search by name or student ID..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -188,7 +194,7 @@ export default function Attendance() {
           <DatePicker value={date} onChange={setDate} />
           {mode === 'student' ? (
             <FilterDropdown
-              label="Grade 3"
+              label="All Grades"
               options={gradeOptions}
               value={gradeFilter}
               onChange={setGradeFilter}
@@ -206,12 +212,16 @@ export default function Attendance() {
         </div>
 
         {mode === 'student' && (
+          <>
+          <p className="att-table-meta">
+            Showing {filteredStudents.length} of {attendanceAdminStudents.length} students
+          </p>
           <div className="um-table-wrap">
             <table className="um-table att-table">
               <thead>
                 <tr>
                   <th>Student</th>
-                  <th>Roll No</th>
+                  <th>Student ID</th>
                   <th>Class</th>
                   <th>Status</th>
                   <th>Remarks</th>
@@ -243,6 +253,7 @@ export default function Attendance() {
               </tbody>
             </table>
           </div>
+          </>
         )}
 
         {mode === 'staff' && (

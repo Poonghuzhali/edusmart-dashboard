@@ -480,6 +480,74 @@ body {
   gap: 16px;
   margin: 24px 0 26px;
 }
+.role-toggle--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.role-toggle--3 .role-btn {
+  padding: 11px 0;
+  font-size: 14px;
+}
+.login-hint {
+  background: rgba(124, 92, 240, 0.08);
+  border: 1px solid rgba(124, 92, 240, 0.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: #444;
+}
+.login-hint strong { display: block; margin-bottom: 6px; color: #161616; }
+.login-hint ul { margin: 0 0 8px; padding-left: 0; list-style: none; }
+.login-hint li { margin: 2px 0; }
+.login-hint-email {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #7c5cf0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.login-hint code {
+  background: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.parent-announce-list {
+  list-style: none;
+  margin: 0;
+  padding: 16px 20px;
+}
+.parent-announce-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eef0f6;
+}
+.parent-announce-list li:last-child { border-bottom: none; }
+.sidebar--parent .brand-logo { background: linear-gradient(135deg, #f472b6, #7c6ce7); }
+.parent-att-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1.5px solid;
+}
+.parent-att-badge--present { border-color: #86efac; color: #16a34a; background: #f0fdf4; }
+.parent-att-badge--absent { border-color: #fca5a5; color: #ef4444; background: #fef2f2; }
+.parent-att-badge--late { border-color: #fcd34d; color: #d97706; background: #fffbeb; }
+.parent-att-badge--excused { border-color: #93c5fd; color: #2563eb; background: #eff6ff; }
+.parent-att-pct { font-weight: 700; font-size: 13px; }
+.parent-att-pct.tone-green { color: #16a34a; }
+.parent-att-pct.tone-orange { color: #d97706; }
+.parent-att-pct.tone-red { color: #dc2626; }
 .role-btn {
   padding: 13px 0;
   border-radius: 26px;

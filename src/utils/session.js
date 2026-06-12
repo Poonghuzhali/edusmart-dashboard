@@ -8,19 +8,33 @@ export const TEACHER_PAGES = [
   'exams', 'messages', 'settings',
 ]
 
-const AUTH_KEY = 'edusmart_auth'
+export const PARENT_PAGES = ['dashboard', 'attendance', 'fees', 'messages', 'settings']
 
-export function saveAuth(role) {
+const AUTH_KEY = 'edusmart_auth'
+const PARENT_EMAIL_KEY = 'edusmart_parent_email'
+
+export function saveAuth(role, parentEmail = null) {
   sessionStorage.setItem(AUTH_KEY, role)
+  if (role === 'parent' && parentEmail) {
+    sessionStorage.setItem(PARENT_EMAIL_KEY, parentEmail.trim().toLowerCase())
+  } else {
+    sessionStorage.removeItem(PARENT_EMAIL_KEY)
+  }
 }
 
 export function loadAuth() {
   const role = sessionStorage.getItem(AUTH_KEY)
-  return role === 'admin' || role === 'teacher' ? role : null
+  if (role === 'admin' || role === 'teacher' || role === 'parent') return role
+  return null
+}
+
+export function loadParentEmail() {
+  return sessionStorage.getItem(PARENT_EMAIL_KEY) || null
 }
 
 export function clearAuth() {
   sessionStorage.removeItem(AUTH_KEY)
+  sessionStorage.removeItem(PARENT_EMAIL_KEY)
 }
 
 export function parseHash() {
@@ -34,11 +48,14 @@ export function parseHash() {
   if (portal === 'teacher' && TEACHER_PAGES.includes(page)) {
     return { role: 'teacher', page }
   }
+  if (portal === 'parent' && PARENT_PAGES.includes(page)) {
+    return { role: 'parent', page }
+  }
   return null
 }
 
 export function setRoute(role, page) {
-  const portal = role === 'teacher' ? 'teacher' : 'admin'
+  const portal = role === 'teacher' ? 'teacher' : role === 'parent' ? 'parent' : 'admin'
   const next = `#/${portal}/${page}`
   if (window.location.hash !== next) {
     window.location.hash = next
@@ -55,12 +72,22 @@ export function readSession() {
   const route = parseHash()
 
   if (!savedRole) {
-    return { authed: false, role: 'admin', page: 'dashboard' }
+    return { authed: false, role: 'admin', page: 'dashboard', parentEmail: null }
   }
 
   if (route && route.role === savedRole) {
-    return { authed: true, role: savedRole, page: route.page }
+    return {
+      authed: true,
+      role: savedRole,
+      page: route.page,
+      parentEmail: savedRole === 'parent' ? loadParentEmail() : null,
+    }
   }
 
-  return { authed: true, role: savedRole, page: 'dashboard' }
+  return {
+    authed: true,
+    role: savedRole,
+    page: 'dashboard',
+    parentEmail: savedRole === 'parent' ? loadParentEmail() : null,
+  }
 }

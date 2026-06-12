@@ -2,15 +2,8 @@
   "classOptions": ["Class 10-A Mathematics", "Class 10-B Mathematics", "Class 10-C Advanced Algebra"],
   "selectedClass": "Class 10-A Mathematics",
   "selectedDate": "Today, Apr 26",
-  "studentCount": 32,
-  "students": [
-    { "id": 1, "name": "Alice Freeman", "roll": "01", "avatar": 1, "status": "Present" },
-    { "id": 2, "name": "David Martinez", "roll": "02", "avatar": 12, "status": "Absent" },
-    { "id": 3, "name": "Emma Chen", "roll": "03", "avatar": 5, "status": "Present" },
-    { "id": 4, "name": "James Wilson", "roll": "04", "avatar": 13, "status": "Late" },
-    { "id": 5, "name": "Priya Patel", "roll": "05", "avatar": 44, "status": "Absent" },
-    { "id": 6, "name": "Mateo Garcia", "roll": "06", "avatar": 52, "status": "Present" }
-  ],
+  "studentCount": 0,
+  "students": [],
   "monthlyData": [
     { "id": 1, "month": "Jan", "present": 88, "absent": 12 },
     { "id": 2, "month": "Feb", "present": 90, "absent": 10 },

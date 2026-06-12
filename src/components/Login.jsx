@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Mail, Lock } from '../icons.jsx'
 import { validateEmail, validatePassword, runValidation } from '../utils/validation.js'
+import { PARENT_LOGIN_ACCOUNTS, PARENT_PASSWORD, validateParentLogin } from '../utils/auth.js'
 
 export default function Login({ onSignIn }) {
   const [role, setRole] = useState('admin')
@@ -24,6 +25,16 @@ export default function Login({ onSignIn }) {
       return
     }
 
+    if (role === 'parent') {
+      const parentError = validateParentLogin(email, password)
+      if (parentError) {
+        setFormError(parentError)
+        return
+      }
+      onSignIn(role, email)
+      return
+    }
+
     onSignIn(role)
   }
 
@@ -31,11 +42,11 @@ export default function Login({ onSignIn }) {
     <div className="login-page">
       <form className="login-card" onSubmit={handleSubmit} noValidate>
         <h1 className="login-title">Welcome Back</h1>
-        <p className="login-sub">Sign into your careerwave account</p>
+        <p className="login-sub">Sign into your EduSmart account</p>
 
         {formError && <div className="form-alert form-alert-error">{formError}</div>}
 
-        <div className="role-toggle">
+        <div className="role-toggle role-toggle--3">
           <button
             type="button"
             className={`role-btn${role === 'admin' ? ' active' : ''}`}
@@ -50,7 +61,39 @@ export default function Login({ onSignIn }) {
           >
             Teacher
           </button>
+          <button
+            type="button"
+            className={`role-btn${role === 'parent' ? ' active' : ''}`}
+            onClick={() => setRole('parent')}
+          >
+            Parent
+          </button>
         </div>
+
+        {role === 'parent' && (
+          <div className="login-hint">
+            <strong>Parent demo accounts</strong>
+            <ul>
+              {PARENT_LOGIN_ACCOUNTS.map((p) => (
+                <li key={p.id}>
+                  <button
+                    type="button"
+                    className="login-hint-email"
+                    onClick={() => {
+                      setEmail(p.email)
+                      setPassword(PARENT_PASSWORD)
+                      setErrors({})
+                      setFormError('')
+                    }}
+                  >
+                    {p.email}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <p>Password for all: <code>{PARENT_PASSWORD}</code></p>
+          </div>
+        )}
 
         <label className="field-label">Email</label>
         <div className={`field${errors.email ? ' has-error' : ''}`}>

@@ -1,7 +1,15 @@
 [
-  { "id": 1, "name": "Michael Johnson", "email": "michael.j@example.com", "contact": "+1 (555) 234-5678", "linkedStudents": ["Alex Johnson - Gr 9"], "status": "Active", "joined": "Oct 24, 2023", "avatar": 11 },
-  { "id": 2, "name": "Emma Williams", "email": "emma.w@example.com", "contact": "+1 (555) 987-6543", "linkedStudents": ["Sarah Williams - Gr 3"], "status": "Inactive", "joined": "Oct 22, 2023", "avatar": 25 },
-  { "id": 3, "name": "Robert Chen", "email": "robert.c@example.com", "contact": "+1 (555) 345-6789", "linkedStudents": ["David Chen - Gr 8"], "status": "Active", "joined": "Oct 18, 2023", "avatar": 53 },
-  { "id": 4, "name": "Sanjay Patel", "email": "sanjay.p@example.com", "contact": "+1 (555) 876-5432", "linkedStudents": ["Maya Patel - Gr 4"], "status": "Active", "joined": "Oct 15, 2023", "avatar": 61 },
-  { "id": 5, "name": "Daniel Cruz", "email": "daniel.c@example.com", "contact": "+1 (555) 789-0123", "linkedStudents": ["Isabella Cruz - Gr 7", "Mateo Cruz - Gr 5"], "status": "Active", "joined": "Sep 29, 2023", "avatar": 33 }
+  { "id": 1, "name": "Michael Johnson", "email": "michael.j@example.com", "contact": "+1 (555) 234-5678", "linkedStudents": ["Alex Johnson - Gr 5"], "status": "Active", "joined": "Oct 24, 2023", "avatar": 11 },
+  { "id": 2, "name": "Sarah Brown", "email": "sarah.b@example.com", "contact": "+1 (555) 345-6789", "linkedStudents": ["Emily Brown - Gr 6"], "status": "Active", "joined": "Oct 22, 2023", "avatar": 25 },
+  { "id": 3, "name": "David Smith", "email": "david.s@example.com", "contact": "+1 (555) 456-7890", "linkedStudents": ["Liam Smith - Gr 5"], "status": "Active", "joined": "Oct 20, 2023", "avatar": 33 },
+  { "id": 4, "name": "Anna Lee", "email": "anna.l@example.com", "contact": "+1 (555) 567-8901", "linkedStudents": ["Sophia Lee - Gr 7"], "status": "Active", "joined": "Oct 18, 2023", "avatar": 9 },
+  { "id": 5, "name": "James Williams", "email": "james.w@example.com", "contact": "+1 (555) 678-9012", "linkedStudents": ["Noah Williams - Gr 4"], "status": "Active", "joined": "Oct 15, 2023", "avatar": 15 },
+  { "id": 6, "name": "Maria Davis", "email": "maria.d@example.com", "contact": "+1 (555) 789-0123", "linkedStudents": ["Olivia Davis - Gr 8"], "status": "Active", "joined": "Oct 12, 2023", "avatar": 20 },
+  { "id": 7, "name": "Robert Miller", "email": "robert.m@example.com", "contact": "+1 (555) 890-1234", "linkedStudents": ["Ethan Miller - Gr 3"], "status": "Active", "joined": "Oct 10, 2023", "avatar": 52 },
+  { "id": 8, "name": "Lisa Wilson", "email": "lisa.w@example.com", "contact": "+1 (555) 901-2345", "linkedStudents": ["Ava Wilson - Gr 6"], "status": "Active", "joined": "Oct 8, 2023", "avatar": 23 },
+  { "id": 9, "name": "John Taylor", "email": "john.t@example.com", "contact": "+1 (555) 012-3456", "linkedStudents": ["Mason Taylor - Gr 5"], "status": "Active", "joined": "Oct 5, 2023", "avatar": 68 },
+  { "id": 10, "name": "Daniel Cruz", "email": "daniel.c@example.com", "contact": "+1 (555) 789-0123", "linkedStudents": ["Isabella Cruz - Gr 8"], "status": "Active", "joined": "Sep 29, 2023", "avatar": 33 },
+  { "id": 11, "name": "Priya Mehta", "email": "priya.m@example.com", "contact": "+1 (555) 123-4567", "linkedStudents": ["Arjun Mehta - Gr 3"], "status": "Active", "joined": "Sep 26, 2023", "avatar": 57 },
+  { "id": 12, "name": "Rachel Adams", "email": "rachel.a@example.com", "contact": "+1 (555) 234-5670", "linkedStudents": ["Chloe Adams - Gr 6"], "status": "Active", "joined": "Sep 24, 2023", "avatar": 32 },
+  { "id": 13, "name": "Abena Mensah", "email": "abena.m@example.com", "contact": "+1 (555) 345-6781", "linkedStudents": ["Kwame Mensah - Gr 5"], "status": "Active", "joined": "Sep 22, 2023", "avatar": 59 }
 ]
