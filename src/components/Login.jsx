@@ -3,6 +3,14 @@ import { Mail, Lock } from '../icons.jsx'
 import { validateEmail, validatePassword, runValidation } from '../utils/validation.js'
 import { PARENT_LOGIN_ACCOUNTS, PARENT_PASSWORD, validateParentLogin } from '../utils/auth.js'
 
+const TODAY_UPDATES = [
+  'Students, staff, and parents data unified across all pages',
+  'Admin attendance now matches all enrolled students',
+  'Parent login added with 5 demo accounts (password: Parent@123)',
+  'New parent portal — dashboard, attendance, fees, and messages',
+  'Email alert sent when admin publishes a new announcement',
+]
+
 export default function Login({ onSignIn }) {
   const [role, setRole] = useState('admin')
   const [email, setEmail] = useState('')
@@ -40,6 +48,16 @@ export default function Login({ onSignIn }) {
 
   return (
     <div className="login-page">
+      <aside className="login-updates-card">
+        <p className="login-updates-label">New updates</p>
+        <h2 className="login-updates-title">What&apos;s new in EduSmart</h2>
+        <ul className="login-updates-list">
+          {TODAY_UPDATES.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </aside>
+
       <form className="login-card" onSubmit={handleSubmit} noValidate>
         <h1 className="login-title">Welcome Back</h1>
         <p className="login-sub">Sign into your EduSmart account</p>
